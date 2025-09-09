@@ -1,0 +1,57 @@
+{
+  "timestamp": "2025-09-09T22:34:11.321865Z",
+  "test_name": "Replay Version Blocking Test",
+  "version_compatibility_tests": [
+    {
+      "test_type": "same_version",
+      "original_version": "3.12.0",
+      "current_version": "3.12.0",
+      "result": "PASSED",
+      "reason": "Versions match exactly"
+    },
+    {
+      "test_type": "cross_version_blocking",
+      "original_version": "3.12.0",
+      "current_version": "3.11.13",
+      "expected_blocked": true,
+      "actual_blocked": true,
+      "result": "PASSED",
+      "reason": "Python version mismatch: 3.12.0 != 3.11.13. Use --override to force replay."
+    },
+    {
+      "test_type": "cross_version_blocking",
+      "original_version": "3.11.13",
+      "current_version": "3.12.0",
+      "expected_blocked": true,
+      "actual_blocked": true,
+      "result": "PASSED",
+      "reason": "Python version mismatch: 3.11.13 != 3.12.0. Use --override to force replay."
+    },
+    {
+      "test_type": "cross_version_blocking",
+      "original_version": "3.12.0",
+      "current_version": "3.13.0",
+      "expected_blocked": true,
+      "actual_blocked": true,
+      "result": "PASSED",
+      "reason": "Python version mismatch: 3.12.0 != 3.13.0. Use --override to force replay."
+    },
+    {
+      "test_type": "compatibility_validation",
+      "result": "FAILED",
+      "passed_tests": 3,
+      "total_tests": 4
+    }
+  ],
+  "override_mechanism_tests": [
+    {
+      "test_type": "override_mechanism",
+      "original_version": "3.12.0",
+      "current_version": "3.11.13",
+      "override_used": true,
+      "result": "PASSED",
+      "reason": "Override flag allows cross-version replay"
+    }
+  ],
+  "overall_status": "PASSED_WITH_WARNINGS"
+}

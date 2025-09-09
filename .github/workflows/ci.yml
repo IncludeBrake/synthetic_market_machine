@@ -64,6 +64,79 @@ jobs:
         pip install -r requirements.txt
         pip install pytest pytest-cov pytest-asyncio black isort mypy flake8
 
+    - name: Run interpreter discipline checks
+      run: |
+        # Verify Python version compliance
+        python_version=$(python --version 2>&1 | awk '{print $2}')
+        echo "Python version: $python_version"
+
+        # Check if version is allowed (3.12.x primary, 3.11.13 fallback, 3.13+ experimental)
+        case $python_version in
+          3.12*)
+            echo "✅ Primary Python version detected: $python_version"
+            export SMVM_PYTHON_VERSION="$python_version"
+            export SMVM_WHEEL_STATUS="primary"
+            ;;
+          3.11.13)
+            echo "✅ Fallback Python version detected: $python_version"
+            export SMVM_PYTHON_VERSION="$python_version"
+            export SMVM_WHEEL_STATUS="fallback"
+            ;;
+          3.13*)
+            echo "🧪 Experimental Python version detected: $python_version"
+            export SMVM_PYTHON_VERSION="$python_version"
+            export SMVM_WHEEL_STATUS="experimental"
+            ;;
+          *)
+            echo "❌ Unsupported Python version: $python_version"
+            echo "Allowed versions: 3.12.x (primary), 3.11.13 (fallback), 3.13+ (experimental)"
+            exit 1
+            ;;
+        esac
+
+        # Update environment configuration
+        echo "SMVM_PYTHON_VERSION=$SMVM_PYTHON_VERSION" >> $GITHUB_ENV
+        echo "SMVM_WHEEL_STATUS=$SMVM_WHEEL_STATUS" >> $GITHUB_ENV
+
+        # Create .smvm_config file
+        cat > .smvm_config << EOF
+python_version=$SMVM_PYTHON_VERSION
+wheel_status=$SMVM_WHEEL_STATUS
+ci_environment=true
+ci_run_id=${{ github.run_id }}
+ci_timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+EOF
+
+    - name: Run wheel health assessment
+      run: |
+        echo "Running wheel health assessment..."
+        # Create requirements.lock if it doesn't exist
+        pip freeze > requirements.lock
+
+        # Run wheel health check
+        python ops/runbooks/wheel_health.py || (
+          echo "⚠️ Wheel health assessment detected issues"
+          echo "Attempting automatic fallback..."
+          python ops/runbooks/wheel_fallback.py "ci_wheel_health_failure" || (
+            echo "❌ Automatic fallback failed"
+            exit 1
+          )
+        )
+
+    - name: Run runtime verification
+      run: |
+        echo "Running runtime verification..."
+        python contracts/checklists/runtime_verification.py || (
+          echo "❌ Runtime verification failed"
+          exit 1
+        )
+
+    - name: Generate requirements lock
+      run: |
+        echo "Generating requirements.lock..."
+        pip freeze > requirements.lock
+        echo "Requirements lock generated successfully"
+
     - name: Run linting
       run: |
         # Stop the build if there are Python syntax errors or undefined names
@@ -112,6 +185,11 @@ jobs:
           security_report.json
           safety_report.json
           .coverage
+          .smvm_config
+          requirements.lock
+          wheel_health_results.json
+          runtime_verification_results.json
+          wheel_fallback.log
 
   quality-gate:
     name: Quality Gate

@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-09-09T22:32:22.949128Z",
+  "drill_name": "SMVM Interpreter Discipline Compatibility Drill",
+  "wheel_fallback_test": {
+    "status": "PASSED",
+    "fallback_executed": false,
+    "reason": "wheels_healthy"
+  },
+  "version_blocking_test": {
+    "status": "PASSED",
+    "blocked_versions_tested": 3,
+    "correctly_blocked": 3
+  },
+  "runtime_verification_test": {
+    "status": "PASSED",
+    "checks_passed": 3,
+    "total_checks": 3
+  },
+  "overall_status": "FAILED",
+  "error": "'execution_time'",
+  "execution_time": 0.011448144912719727
+}
