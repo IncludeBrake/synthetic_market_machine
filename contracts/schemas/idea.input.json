@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://smvm.example.com/schemas/idea.input.json",
+  "title": "Idea Input Schema",
+  "description": "Minimal schema for capturing vague business ideas or concepts",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["description"],
+  "properties": {
+    "description": {
+      "type": "string",
+      "description": "Free-form description of the idea or concept",
+      "minLength": 1,
+      "maxLength": 1000,
+      "data_zone": "GREEN",
+      "retention_days": 90
+    },
+    "domain": {
+      "type": "string",
+      "description": "Optional domain or industry context",
+      "enum": ["finance", "healthcare", "retail", "technology", "other"],
+      "data_zone": "GREEN",
+      "retention_days": 90
+    },
+    "urgency": {
+      "type": "string",
+      "description": "Optional urgency level",
+      "enum": ["low", "medium", "high", "critical"],
+      "data_zone": "GREEN",
+      "retention_days": 90
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Standard metadata block",
+      "additionalProperties": false,
+      "required": ["run_id", "span_id", "timestamp", "python_version"],
+      "properties": {
+        "run_id": {
+          "type": "string",
+          "pattern": "^RUN-\\d{8}-\\d{6}-[a-f0-9]{8}$",
+          "description": "Run identifier"
+        },
+        "span_id": {
+          "type": "string",
+          "pattern": "^RUN-\\d{8}-\\d{6}-[a-f0-9]{8}-\\d{4}-[A-Z]{3}$",
+          "description": "Span identifier"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp"
+        },
+        "python_version": {
+          "type": "string",
+          "pattern": "^(3\\.12\\.\\d+|3\\.11\\.13)$",
+          "description": "Python version (3.12.x or 3.11.13 only)"
+        },
+        "python_env_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 hash of Python environment"
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 hash of content"
+        },
+        "composite_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "Composite hash including metadata"
+        },
+        "data_zone": {
+          "type": "string",
+          "enum": ["GREEN"],
+          "description": "Data classification zone"
+        },
+        "retention_days": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2555,
+          "description": "Retention period in days"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,285 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://smvm.example.com/schemas/simulation.config.json",
+  "title": "Simulation Configuration Schema",
+  "description": "Schema for market simulation configuration parameters",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["simulation_parameters", "market_conditions", "time_parameters", "metadata"],
+  "properties": {
+    "simulation_parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scenario", "model_type", "random_seed", "confidence_level"],
+      "properties": {
+        "scenario": {
+          "type": "string",
+          "enum": ["baseline", "optimistic", "pessimistic", "stress_test", "sensitivity_analysis"],
+          "description": "Simulation scenario type"
+        },
+        "model_type": {
+          "type": "string",
+          "enum": ["monte_carlo", "historical_backtest", "agent_based", "system_dynamics", "hybrid"],
+          "description": "Simulation model type"
+        },
+        "random_seed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Random seed for reproducible results"
+        },
+        "confidence_level": {
+          "type": "number",
+          "minimum": 0.80,
+          "maximum": 0.99,
+          "multipleOf": 0.01,
+          "description": "Statistical confidence level",
+          "unit": "fraction"
+        },
+        "iterations": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 100000,
+          "description": "Number of simulation iterations",
+          "unit": "count"
+        }
+      }
+    },
+    "market_conditions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["economic_environment", "market_volatility", "interest_rates"],
+      "properties": {
+        "economic_environment": {
+          "type": "string",
+          "enum": ["expansion", "contraction", "recession", "recovery", "stagnation"],
+          "description": "Economic environment state"
+        },
+        "market_volatility": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["index", "regime"],
+          "properties": {
+            "index": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 1.0,
+              "multipleOf": 0.001,
+              "description": "Market volatility index (0-1)",
+              "unit": "fraction"
+            },
+            "regime": {
+              "type": "string",
+              "enum": ["low", "normal", "high", "extreme"],
+              "description": "Volatility regime"
+            }
+          }
+        },
+        "interest_rates": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["base_rate", "spread"],
+          "properties": {
+            "base_rate": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 0.20,
+              "multipleOf": 0.001,
+              "description": "Base interest rate",
+              "unit": "fraction_per_year"
+            },
+            "spread": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 0.10,
+              "multipleOf": 0.001,
+              "description": "Interest rate spread",
+              "unit": "fraction"
+            }
+          }
+        },
+        "inflation_rate": {
+          "type": "number",
+          "minimum": -0.10,
+          "maximum": 0.20,
+          "multipleOf": 0.001,
+          "description": "Annual inflation rate",
+          "unit": "fraction_per_year"
+        },
+        "market_trends": {
+          "type": "array",
+          "description": "Key market trends to simulate",
+          "minItems": 0,
+          "maxItems": 10,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["trend_type", "impact_magnitude"],
+            "properties": {
+              "trend_type": {
+                "type": "string",
+                "enum": ["digital_transformation", "regulatory_change", "demographic_shift", "technological_disruption", "economic_policy_change"],
+                "description": "Type of market trend"
+              },
+              "impact_magnitude": {
+                "type": "number",
+                "minimum": -1.0,
+                "maximum": 1.0,
+                "multipleOf": 0.01,
+                "description": "Impact magnitude (-1 to 1)",
+                "unit": "normalized_scale"
+              }
+            }
+          }
+        }
+      }
+    },
+    "time_parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start_date", "end_date", "time_step"],
+      "properties": {
+        "start_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Simulation start date (YYYY-MM-DD)"
+        },
+        "end_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Simulation end date (YYYY-MM-DD)"
+        },
+        "time_step": {
+          "type": "string",
+          "enum": ["daily", "weekly", "monthly", "quarterly"],
+          "description": "Simulation time step granularity"
+        },
+        "warmup_period": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 365,
+          "description": "Warmup period in days",
+          "unit": "days"
+        },
+        "output_frequency": {
+          "type": "string",
+          "enum": ["daily", "weekly", "monthly", "quarterly", "final_only"],
+          "description": "Frequency of simulation outputs"
+        }
+      }
+    },
+    "agent_parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "population_size": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 100000,
+          "description": "Number of simulated agents",
+          "unit": "count"
+        },
+        "behavior_models": {
+          "type": "array",
+          "description": "Agent behavior models to use",
+          "minItems": 1,
+          "maxItems": 5,
+          "items": {
+            "type": "string",
+            "enum": ["rational", "bounded_rational", "herd_behavior", "momentum", "mean_reversion"],
+            "description": "Agent behavior model"
+          }
+        },
+        "adaptation_rate": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "multipleOf": 0.01,
+          "description": "Agent adaptation rate",
+          "unit": "fraction_per_period"
+        }
+      }
+    },
+    "validation_parameters": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "backtesting_window": {
+          "type": "integer",
+          "minimum": 30,
+          "maximum": 3650,
+          "description": "Backtesting window in days",
+          "unit": "days"
+        },
+        "validation_metrics": {
+          "type": "array",
+          "description": "Validation metrics to compute",
+          "minItems": 1,
+          "maxItems": 10,
+          "items": {
+            "type": "string",
+            "enum": ["mean_absolute_error", "root_mean_squared_error", "mean_absolute_percentage_error", "r_squared", "sharpe_ratio", "maximum_drawdown"],
+            "description": "Validation metric"
+          }
+        },
+        "benchmark_comparison": {
+          "type": "boolean",
+          "description": "Whether to compare against benchmarks"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_id", "span_id", "timestamp", "python_version", "data_zone", "retention_days"],
+      "properties": {
+        "run_id": {
+          "type": "string",
+          "pattern": "^RUN-\\d{8}-\\d{6}-[a-f0-9]{8}$",
+          "description": "Run identifier"
+        },
+        "span_id": {
+          "type": "string",
+          "pattern": "^RUN-\\d{8}-\\d{6}-[a-f0-9]{8}-\\d{4}-[A-Z]{3}$",
+          "description": "Span identifier"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp"
+        },
+        "python_version": {
+          "type": "string",
+          "pattern": "^(3\\.12\\.\\d+|3\\.11\\.13)$",
+          "description": "Python version (3.12.x or 3.11.13 only)"
+        },
+        "python_env_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 hash of Python environment"
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 hash of content"
+        },
+        "composite_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "Composite hash including metadata"
+        },
+        "data_zone": {
+          "type": "string",
+          "enum": ["AMBER"],
+          "description": "Data classification zone"
+        },
+        "retention_days": {
+          "type": "integer",
+          "minimum": 90,
+          "maximum": 2555,
+          "description": "Retention period in days"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,492 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://smvm.example.com/schemas/decision.output.json",
+  "title": "Decision Output Schema",
+  "description": "Schema for business decision recommendations and analysis",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["decision_recommendation", "analysis_summary", "risk_assessment", "metadata"],
+  "properties": {
+    "decision_recommendation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_recommendation", "confidence_level", "implementation_priority"],
+      "properties": {
+        "primary_recommendation": {
+          "type": "string",
+          "enum": ["proceed", "proceed_with_modifications", "delay", "pivot", "cancel"],
+          "description": "Primary decision recommendation"
+        },
+        "confidence_level": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "multipleOf": 0.01,
+          "description": "Confidence level in recommendation",
+          "unit": "fraction"
+        },
+        "implementation_priority": {
+          "type": "string",
+          "enum": ["critical", "high", "medium", "low"],
+          "description": "Implementation priority level"
+        },
+        "alternative_options": {
+          "type": "array",
+          "description": "Alternative decision options considered",
+          "minItems": 1,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["option", "pros_cons"],
+            "properties": {
+              "option": {
+                "type": "string",
+                "maxLength": 100,
+                "description": "Alternative option description"
+              },
+              "pros_cons": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "advantages": {
+                    "type": "array",
+                    "maxItems": 5,
+                    "items": {
+                      "type": "string",
+                      "maxLength": 200,
+                      "description": "Advantage of this option"
+                    }
+                  },
+                  "disadvantages": {
+                    "type": "array",
+                    "maxItems": 5,
+                    "items": {
+                      "type": "string",
+                      "maxLength": 200,
+                      "description": "Disadvantage of this option"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "analysis_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["market_analysis", "financial_projections", "operational_impact"],
+      "properties": {
+        "market_analysis": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["market_opportunity", "competitive_positioning"],
+          "properties": {
+            "market_opportunity": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["size", "growth_rate", "time_to_market"],
+              "properties": {
+                "size": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1000000000000,
+                  "multipleOf": 1000000,
+                  "description": "Market opportunity size",
+                  "unit": "currency_units"
+                },
+                "growth_rate": {
+                  "type": "number",
+                  "minimum": -0.50,
+                  "maximum": 2.0,
+                  "multipleOf": 0.01,
+                  "description": "Market growth rate",
+                  "unit": "fraction_per_year"
+                },
+                "time_to_market": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 730,
+                  "description": "Time to market in days",
+                  "unit": "days"
+                }
+              }
+            },
+            "competitive_positioning": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "differentiation_factors": {
+                  "type": "array",
+                  "maxItems": 10,
+                  "items": {
+                    "type": "string",
+                    "maxLength": 150,
+                    "description": "Key differentiation factor"
+                  }
+                },
+                "barriers_to_entry": {
+                  "type": "array",
+                  "maxItems": 5,
+                  "items": {
+                    "type": "string",
+                    "enum": ["technology", "capital", "regulatory", "brand", "network"],
+                    "description": "Barrier to entry"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "financial_projections": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["revenue_forecast", "cost_structure", "break_even_analysis"],
+          "properties": {
+            "revenue_forecast": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["year_1_revenue", "year_3_revenue", "peak_revenue"],
+              "properties": {
+                "year_1_revenue": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1000000000,
+                  "multipleOf": 1000,
+                  "description": "Year 1 revenue forecast",
+                  "unit": "currency_units"
+                },
+                "year_3_revenue": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 10000000000,
+                  "multipleOf": 1000,
+                  "description": "Year 3 revenue forecast",
+                  "unit": "currency_units"
+                },
+                "peak_revenue": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 50000000000,
+                  "multipleOf": 1000,
+                  "description": "Peak revenue potential",
+                  "unit": "currency_units"
+                }
+              }
+            },
+            "cost_structure": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "fixed_costs": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100000000,
+                  "multipleOf": 1000,
+                  "description": "Monthly fixed costs",
+                  "unit": "currency_units_per_month"
+                },
+                "variable_costs": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100000000,
+                  "multipleOf": 1000,
+                  "description": "Monthly variable costs",
+                  "unit": "currency_units_per_month"
+                },
+                "customer_acquisition_cost": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100000,
+                  "multipleOf": 10,
+                  "description": "Cost to acquire one customer",
+                  "unit": "currency_units"
+                }
+              }
+            },
+            "break_even_analysis": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "break_even_months": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 120,
+                  "description": "Months to break even",
+                  "unit": "months"
+                },
+                "break_even_customers": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 1000000,
+                  "description": "Customers needed to break even",
+                  "unit": "count"
+                }
+              }
+            }
+          }
+        },
+        "operational_impact": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "resource_requirements": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "team_size": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 500,
+                  "description": "Required team size",
+                  "unit": "fte"
+                },
+                "technology_stack": {
+                  "type": "array",
+                  "maxItems": 10,
+                  "items": {
+                    "type": "string",
+                    "maxLength": 100,
+                    "description": "Required technology"
+                  }
+                }
+              }
+            },
+            "timeline": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "development_months": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 36,
+                  "description": "Development timeline",
+                  "unit": "months"
+                },
+                "milestones": {
+                  "type": "array",
+                  "maxItems": 10,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": ["description", "month"],
+                    "properties": {
+                      "description": {
+                        "type": "string",
+                        "maxLength": 200,
+                        "description": "Milestone description"
+                      },
+                      "month": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 36,
+                        "description": "Month when milestone is reached",
+                        "unit": "months"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "risk_assessment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["overall_risk_level", "key_risks", "mitigation_strategies"],
+      "properties": {
+        "overall_risk_level": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "critical"],
+          "description": "Overall risk assessment level"
+        },
+        "key_risks": {
+          "type": "array",
+          "description": "Key risks identified",
+          "minItems": 1,
+          "maxItems": 10,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["risk_type", "probability", "impact", "description"],
+            "properties": {
+              "risk_type": {
+                "type": "string",
+                "enum": ["market", "financial", "operational", "technical", "regulatory", "competitive"],
+                "description": "Type of risk"
+              },
+              "probability": {
+                "type": "string",
+                "enum": ["low", "medium", "high"],
+                "description": "Risk probability"
+              },
+              "impact": {
+                "type": "string",
+                "enum": ["low", "medium", "high", "critical"],
+                "description": "Risk impact"
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 300,
+                "description": "Risk description"
+              }
+            }
+          }
+        },
+        "mitigation_strategies": {
+          "type": "array",
+          "description": "Risk mitigation strategies",
+          "minItems": 1,
+          "maxItems": 10,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["strategy", "effectiveness", "cost"],
+            "properties": {
+              "strategy": {
+                "type": "string",
+                "maxLength": 300,
+                "description": "Mitigation strategy description"
+              },
+              "effectiveness": {
+                "type": "string",
+                "enum": ["low", "medium", "high"],
+                "description": "Strategy effectiveness"
+              },
+              "cost": {
+                "type": "string",
+                "enum": ["low", "medium", "high"],
+                "description": "Implementation cost"
+              }
+            }
+          }
+        }
+      }
+    },
+    "implementation_plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "phases": {
+          "type": "array",
+          "description": "Implementation phases",
+          "minItems": 1,
+          "maxItems": 10,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["phase_name", "duration_months", "key_deliverables"],
+            "properties": {
+              "phase_name": {
+                "type": "string",
+                "maxLength": 100,
+                "description": "Phase name"
+              },
+              "duration_months": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 12,
+                "description": "Phase duration",
+                "unit": "months"
+              },
+              "key_deliverables": {
+                "type": "array",
+                "maxItems": 5,
+                "items": {
+                  "type": "string",
+                  "maxLength": 200,
+                  "description": "Key deliverable"
+                }
+              }
+            }
+          }
+        },
+        "success_metrics": {
+          "type": "array",
+          "description": "Success metrics",
+          "minItems": 1,
+          "maxItems": 10,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["metric", "target", "timeline"],
+            "properties": {
+              "metric": {
+                "type": "string",
+                "maxLength": 150,
+                "description": "Success metric"
+              },
+              "target": {
+                "type": "string",
+                "maxLength": 100,
+                "description": "Target value"
+              },
+              "timeline": {
+                "type": "string",
+                "maxLength": 50,
+                "description": "Timeline for achievement"
+              }
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_id", "span_id", "timestamp", "python_version", "data_zone", "retention_days"],
+      "properties": {
+        "run_id": {
+          "type": "string",
+          "pattern": "^RUN-\\d{8}-\\d{6}-[a-f0-9]{8}$",
+          "description": "Run identifier"
+        },
+        "span_id": {
+          "type": "string",
+          "pattern": "^RUN-\\d{8}-\\d{6}-[a-f0-9]{8}-\\d{4}-[A-Z]{3}$",
+          "description": "Span identifier"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp"
+        },
+        "python_version": {
+          "type": "string",
+          "pattern": "^(3\\.12\\.\\d+|3\\.11\\.13)$",
+          "description": "Python version (3.12.x or 3.11.13 only)"
+        },
+        "python_env_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 hash of Python environment"
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 hash of content"
+        },
+        "composite_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "Composite hash including metadata"
+        },
+        "data_zone": {
+          "type": "string",
+          "enum": ["AMBER"],
+          "description": "Data classification zone"
+        },
+        "retention_days": {
+          "type": "integer",
+          "minimum": 365,
+          "maximum": 2555,
+          "description": "Retention period in days"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,147 @@
+# SMVM Development Environment Configuration
+# Local development settings with relaxed constraints
+
+# Service Configuration
+services:
+  ingestion:
+    enabled: true
+    storage_backend: "file"
+    storage_path: "./data/ingestion"
+    max_batch_size: 1000
+    validation_mode: "warn"  # Log warnings but don't fail
+
+  personas:
+    enabled: true
+    synthesis_engine: "basic"
+    max_personas: 1000
+    bias_control: "relaxed"
+    diversity_target: 0.7
+
+  competitors:
+    enabled: true
+    taxonomy_version: "1.0"
+    pricing_normalization: "basic"
+    cache_enabled: false
+
+  simulation:
+    enabled: true
+    max_iterations: 10000
+    realism_enforcement: "warn"
+    seed_generation: "deterministic"
+
+  analysis:
+    enabled: true
+    analysis_depth: "basic"
+    confidence_threshold: 0.8
+    cache_enabled: false
+
+  overwatch:
+    enabled: true
+    risk_threshold: 0.6
+    token_ceiling_enforcement: "log_only"
+    monitoring_level: "basic"
+
+  memory:
+    enabled: true
+    storage_backend: "file"
+    storage_path: "./data/memory"
+    retention_policy: "extended"
+
+  cli:
+    enabled: true
+    logging_level: "DEBUG"
+    interactive_mode: true
+
+# Token Management
+token_management:
+  base_limits:
+    ingestion: 1000
+    personas: 2000
+    competitors: 1500
+    simulation: 3000
+    analysis: 2000
+    overwatch: 500
+    memory: 300
+    cli: 100
+
+  dynamic_scaling:
+    enabled: true
+    load_sensitivity: 0.5
+    priority_weight: 0.3
+    behavior_memory_days: 7
+
+  emergency_overrides:
+    enabled: true
+    max_multiplier: 2.0
+    approval_required: false
+
+# Data Governance
+data_governance:
+  zones:
+    GREEN: "public_data"
+    AMBER: "internal_analysis"
+  retention_days:
+    GREEN: 90
+    AMBER: 365
+  pii_detection: "basic"
+  encryption: "none"
+
+# Observability
+observability:
+  logging:
+    level: "DEBUG"
+    format: "detailed"
+    file_rotation: "daily"
+
+  metrics:
+    enabled: true
+    collection_interval: 60
+    retention_days: 30
+
+  tracing:
+    enabled: true
+    sample_rate: 1.0
+    max_spans_per_request: 100
+
+# Security
+security:
+  authentication: "none"
+  authorization: "basic"
+  encryption: "none"
+  audit_trail: "file"
+  audit_retention_days: 90
+
+# Performance
+performance:
+  max_concurrent_requests: 10
+  request_timeout_seconds: 300
+  memory_limit_mb: 2048
+  cpu_limit_percent: 80
+
+# Development Features
+development:
+  debug_mode: true
+  mock_external_services: true
+  verbose_logging: true
+  hot_reload: true
+  test_data_generation: "enabled"
+
+# Integration Points
+integration:
+  tractionbuild:
+    enabled: false
+    endpoint: "http://localhost:8080/api/v1"
+    timeout_seconds: 30
+
+  external_apis:
+    mock_responses: true
+    rate_limiting: false
+    error_simulation: false
+
+# Environment Metadata
+metadata:
+  environment: "development"
+  version: "1.0.0-dev"
+  python_version: "3.12.10"
+  created_at: "2024-12-01T00:00:00Z"
+  updated_at: "2024-12-01T00:00:00Z"

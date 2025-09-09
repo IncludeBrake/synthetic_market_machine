@@ -1,0 +1,16 @@
+{
+  "description": "Develop a mobile banking app with AI-powered financial insights",
+  "domain": "finance",
+  "urgency": "high",
+  "metadata": {
+    "run_id": "RUN-20241201-143052-a1b2c3d4",
+    "span_id": "RUN-20241201-143052-a1b2c3d4-0001-IDC",
+    "timestamp": "2024-12-01T14:30:52Z",
+    "python_version": "3.12.10",
+    "python_env_hash": "3b5f4d62df23dedd64bb27db73bd291798b5944ef4cfd2bb1fb6d469e3387b9f",
+    "content_hash": "9641162c7de7b94338c36f13be1c150bfeeee9b9705e54525a7e44fc5dbf82cc",
+    "composite_hash": "8264eb8dad7b527f8ea2ede75309b951b0b73d6183df28a90fb7d6d1496f8b51",
+    "data_zone": "GREEN",
+    "retention_days": 90
+  }
+}

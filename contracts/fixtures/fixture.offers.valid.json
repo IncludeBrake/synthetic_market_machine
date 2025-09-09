@@ -1,0 +1,114 @@
+{
+  "offers": [
+    {
+      "offer_id": "O-US-202412-a1b2",
+      "product_info": {
+        "name": "Premium Checking Account",
+        "category": "checking_account",
+        "description": "High-yield checking account with advanced features",
+        "features": ["No monthly fees", "Mobile check deposit", "Bill pay", "ATM fee reimbursement"]
+      },
+      "pricing": {
+        "model": "free",
+        "currency": "USD",
+        "monthly_fee": 0.00,
+        "transaction_fee": {
+          "percentage": 0.0,
+          "fixed_amount": 0.00
+        }
+      },
+      "target_audience": {
+        "demographics": {
+          "age_range": {
+            "min": 25,
+            "max": 55
+          },
+          "income_range": {
+            "min": 50000,
+            "max": 150000
+          }
+        },
+        "behavioral_segments": ["tech_savvy", "high_value"]
+      },
+      "positioning": {
+        "unique_value_proposition": "Zero fees with premium digital banking experience",
+        "competitive_advantages": ["Superior mobile app", "24/7 customer support", "Advanced security features"],
+        "market_position": "premium"
+      }
+    },
+    {
+      "offer_id": "O-EU-202412-c3d4",
+      "product_info": {
+        "name": "Business Savings Account",
+        "category": "savings_account",
+        "description": "High-interest business savings with treasury management",
+        "features": ["Competitive interest rates", "Online banking", "Wire transfers", "Account alerts"]
+      },
+      "pricing": {
+        "model": "tiered",
+        "currency": "EUR",
+        "tiers": [
+          {
+            "name": "Starter",
+            "price": 0.00,
+            "limits": {
+              "transactions": 50,
+              "users": 1
+            }
+          },
+          {
+            "name": "Professional",
+            "price": 25.00,
+            "limits": {
+              "transactions": 500,
+              "users": 5
+            }
+          }
+        ]
+      },
+      "target_audience": {
+        "demographics": {
+          "age_range": {
+            "min": 30,
+            "max": 65
+          },
+          "income_range": {
+            "min": 75000,
+            "max": 500000
+          }
+        },
+        "behavioral_segments": ["loyal_customer", "premium_seeker"]
+      },
+      "positioning": {
+        "unique_value_proposition": "Comprehensive business banking with competitive pricing",
+        "competitive_advantages": ["Integrated treasury management", "Dedicated relationship manager", "Custom reporting"],
+        "market_position": "premium"
+      }
+    }
+  ],
+  "pricing_strategy": {
+    "overall_approach": "value_based",
+    "profit_margins": {
+      "target_margin": 0.25,
+      "break_even_analysis": {
+        "fixed_costs": 500000,
+        "variable_cost_per_unit": 5.00
+      }
+    },
+    "market_penetration": {
+      "target_market_share": 5.0,
+      "adoption_curve": "moderate"
+    }
+  },
+  "metadata": {
+    "run_id": "RUN-20241201-143052-a1b2c3d4",
+    "span_id": "RUN-20241201-143052-a1b2c3d4-0004-OFR",
+    "timestamp": "2024-12-01T14:33:41Z",
+    "python_version": "3.12.10",
+    "python_env_hash": "3b5f4d62df23dedd64bb27db73bd291798b5944ef4cfd2bb1fb6d469e3387b9f",
+    "content_hash": "7118d0f361502bfe48d6c4b91b2c242d10981796ffdf5adb04aeb0d109c0f91a",
+    "composite_hash": "aa32dcc23b017ea34246e80ff4277f5edcd234c112a53306e92dde7b4460639d",
+    "data_zone": "AMBER",
+    "retention_days": 180
+  }
+}

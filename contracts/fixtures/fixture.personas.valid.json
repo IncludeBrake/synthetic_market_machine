@@ -1,0 +1,73 @@
+{
+  "personas": [
+    {
+      "persona_id": "P-US-202412-a1b2",
+      "demographics": {
+        "age": 35,
+        "gender": "female",
+        "location": {
+          "country": "US",
+          "region": "California"
+        },
+        "education_level": "bachelor",
+        "occupation": "Software Engineer"
+      },
+        "behavioral_attributes": {
+          "risk_tolerance": 7.50,
+          "brand_loyalty": 6.20,
+          "tech_adoption": "early_adopter",
+          "shopping_frequency": "weekly"
+        },
+      "economic_profile": {
+        "income_range": {
+          "min": 85000,
+          "max": 120000,
+          "currency": "USD"
+        },
+        "net_worth": 250000,
+        "debt_to_income_ratio": 0.35,
+        "savings_rate": 0.15
+      }
+    },
+    {
+      "persona_id": "P-GB-202412-c3d4",
+      "demographics": {
+        "age": 42,
+        "gender": "male",
+        "location": {
+          "country": "GB",
+          "region": "London"
+        },
+        "education_level": "master",
+        "occupation": "Financial Analyst"
+      },
+      "behavioral_attributes": {
+        "risk_tolerance": 4.80,
+        "brand_loyalty": 8.10,
+        "tech_adoption": "early_majority",
+        "shopping_frequency": "monthly"
+      },
+      "economic_profile": {
+        "income_range": {
+          "min": 65000,
+          "max": 95000,
+          "currency": "GBP"
+        },
+        "net_worth": 180000,
+        "debt_to_income_ratio": 0.42,
+        "savings_rate": 0.12
+      }
+    }
+  ],
+  "metadata": {
+    "run_id": "RUN-20241201-143052-a1b2c3d4",
+    "span_id": "RUN-20241201-143052-a1b2c3d4-0002-PER",
+    "timestamp": "2024-12-01T14:31:15Z",
+    "python_version": "3.12.10",
+    "python_env_hash": "3b5f4d62df23dedd64bb27db73bd291798b5944ef4cfd2bb1fb6d469e3387b9f",
+    "content_hash": "a63c609871d2e520c41ecc41ab84d5802b3c44a22eed0c1e4bc37dbce12c970e",
+    "composite_hash": "f287bbd5cbb793145f91dceb349fd6b1ffa95b595597ec96896fd046dd557c4c",
+    "data_zone": "AMBER",
+    "retention_days": 365
+  }
+}

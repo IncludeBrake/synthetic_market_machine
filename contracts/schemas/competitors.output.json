@@ -1,0 +1,298 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://smvm.example.com/schemas/competitors.output.json",
+  "title": "Competitors Output Schema",
+  "description": "Schema for competitor market analysis and positioning data",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["competitors", "market_analysis", "metadata"],
+  "properties": {
+    "competitors": {
+      "type": "array",
+      "description": "Array of identified competitors",
+      "minItems": 1,
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["competitor_id", "company_info", "market_position", "strengths_weaknesses"],
+        "properties": {
+          "competitor_id": {
+            "type": "string",
+            "pattern": "^C-[A-Z]{2}-\\d{6}-[a-f0-9]{4}$",
+            "description": "Unique competitor identifier (C-XX-XXXXXX-XXXX)"
+          },
+          "company_info": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "industry", "headquarters", "founded_year", "employee_count"],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "description": "Company name"
+              },
+              "industry": {
+                "type": "string",
+                "enum": ["fintech", "banking", "insurance", "investment", "cryptocurrency", "payments", "lending", "other"],
+                "description": "Primary industry sector"
+              },
+              "headquarters": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["country", "city"],
+                "properties": {
+                  "country": {
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 2,
+                    "pattern": "^[A-Z]{2}$",
+                    "description": "ISO 3166-1 alpha-2 country code"
+                  },
+                  "city": {
+                    "type": "string",
+                    "maxLength": 100,
+                    "description": "Headquarters city"
+                  }
+                }
+              },
+              "founded_year": {
+                "type": "integer",
+                "minimum": 1800,
+                "maximum": 2030,
+                "description": "Year company was founded",
+                "unit": "year"
+              },
+              "employee_count": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 1000000,
+                "description": "Number of employees",
+                "unit": "count"
+              }
+            }
+          },
+          "market_position": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["market_share", "growth_rate", "target_segments", "geographic_presence"],
+            "properties": {
+              "market_share": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 100.0,
+                "description": "Market share percentage (use 2 decimal places)",
+                "unit": "percentage"
+              },
+              "growth_rate": {
+                "type": "number",
+                "minimum": -100.0,
+                "maximum": 1000.0,
+                "description": "Annual growth rate (use 2 decimal places)",
+                "unit": "percentage_per_year"
+              },
+              "target_segments": {
+                "type": "array",
+                "description": "Target market segments",
+                "minItems": 1,
+                "maxItems": 10,
+                "items": {
+                  "type": "string",
+                  "enum": ["retail", "enterprise", "small_business", "millennial", "gen_z", "high_net_worth", "emerging_markets"],
+                  "description": "Market segment"
+                }
+              },
+              "geographic_presence": {
+                "type": "array",
+                "description": "Geographic markets served",
+                "minItems": 1,
+                "maxItems": 50,
+                "items": {
+                  "type": "string",
+                  "minLength": 2,
+                  "maxLength": 2,
+                  "pattern": "^[A-Z]{2}$",
+                  "description": "ISO 3166-1 alpha-2 country code"
+                }
+              }
+            }
+          },
+          "strengths_weaknesses": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["strengths", "weaknesses", "threat_level"],
+            "properties": {
+              "strengths": {
+                "type": "array",
+                "description": "Key competitive strengths",
+                "minItems": 1,
+                "maxItems": 10,
+                "items": {
+                  "type": "string",
+                  "maxLength": 200,
+                  "description": "Competitive strength"
+                }
+              },
+              "weaknesses": {
+                "type": "array",
+                "description": "Key competitive weaknesses",
+                "minItems": 0,
+                "maxItems": 10,
+                "items": {
+                  "type": "string",
+                  "maxLength": 200,
+                  "description": "Competitive weakness"
+                }
+              },
+              "threat_level": {
+                "type": "string",
+                "enum": ["low", "medium", "high", "critical"],
+                "description": "Competitive threat assessment"
+              }
+            }
+          }
+        }
+      }
+    },
+    "market_analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_market_size", "market_growth", "competitive_intensity", "barriers_to_entry"],
+      "properties": {
+        "total_market_size": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["value", "currency", "year"],
+          "properties": {
+            "value": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1000000000000000,
+              "multipleOf": 1000000,
+              "description": "Total market size",
+              "unit": "currency_units"
+            },
+            "currency": {
+              "type": "string",
+              "pattern": "^[A-Z]{3}$",
+              "description": "ISO 4217 currency code"
+            },
+            "year": {
+              "type": "integer",
+              "minimum": 2000,
+              "maximum": 2050,
+              "description": "Reference year for market size",
+              "unit": "year"
+            }
+          }
+        },
+        "market_growth": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["cagr", "forecast_period"],
+          "properties": {
+            "cagr": {
+              "type": "number",
+              "minimum": -50.0,
+              "maximum": 200.0,
+              "multipleOf": 0.1,
+              "description": "Compound Annual Growth Rate",
+              "unit": "percentage_per_year"
+            },
+            "forecast_period": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["start_year", "end_year"],
+              "properties": {
+                "start_year": {
+                  "type": "integer",
+                  "minimum": 2000,
+                  "maximum": 2040,
+                  "description": "Forecast start year",
+                  "unit": "year"
+                },
+                "end_year": {
+                  "type": "integer",
+                  "minimum": 2020,
+                  "maximum": 2050,
+                  "description": "Forecast end year",
+                  "unit": "year"
+                }
+              }
+            }
+          }
+        },
+        "competitive_intensity": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "very_high"],
+          "description": "Overall competitive intensity in the market"
+        },
+        "barriers_to_entry": {
+          "type": "array",
+          "description": "Key barriers to market entry",
+          "minItems": 1,
+          "maxItems": 10,
+          "items": {
+            "type": "string",
+            "enum": ["capital_requirements", "regulatory_requirements", "technology_complexity", "brand_loyalty", "network_effects", "economies_of_scale", "access_to_distribution"],
+            "description": "Barrier to entry type"
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_id", "span_id", "timestamp", "python_version", "data_zone", "retention_days"],
+      "properties": {
+        "run_id": {
+          "type": "string",
+          "pattern": "^RUN-\\d{8}-\\d{6}-[a-f0-9]{8}$",
+          "description": "Run identifier"
+        },
+        "span_id": {
+          "type": "string",
+          "pattern": "^RUN-\\d{8}-\\d{6}-[a-f0-9]{8}-\\d{4}-[A-Z]{3}$",
+          "description": "Span identifier"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp"
+        },
+        "python_version": {
+          "type": "string",
+          "pattern": "^(3\\.12\\.\\d+|3\\.11\\.13)$",
+          "description": "Python version (3.12.x or 3.11.13 only)"
+        },
+        "python_env_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 hash of Python environment"
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 hash of content"
+        },
+        "composite_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "Composite hash including metadata"
+        },
+        "data_zone": {
+          "type": "string",
+          "enum": ["AMBER"],
+          "description": "Data classification zone"
+        },
+        "retention_days": {
+          "type": "integer",
+          "minimum": 365,
+          "maximum": 2555,
+          "description": "Retention period in days"
+        }
+      }
+    }
+  }
+}

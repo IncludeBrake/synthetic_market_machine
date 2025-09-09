@@ -1,0 +1,168 @@
+# SMVM CI/CD Environment Configuration
+# Production-like settings for continuous integration and deployment
+
+# Service Configuration
+services:
+  ingestion:
+    enabled: true
+    storage_backend: "file"
+    storage_path: "./ci_data/ingestion"
+    max_batch_size: 100
+    validation_mode: "strict"
+
+  personas:
+    enabled: true
+    synthesis_engine: "ci_optimized"
+    max_personas: 200
+    bias_control: "strict"
+    diversity_target: 0.85
+
+  competitors:
+    enabled: true
+    taxonomy_version: "1.0"
+    pricing_normalization: "comprehensive"
+    cache_enabled: true
+
+  simulation:
+    enabled: true
+    max_iterations: 1000
+    realism_enforcement: "strict"
+    seed_generation: "deterministic"
+
+  analysis:
+    enabled: true
+    analysis_depth: "comprehensive"
+    confidence_threshold: 0.95
+    cache_enabled: true
+
+  overwatch:
+    enabled: true
+    risk_threshold: 0.3
+    token_ceiling_enforcement: "strict"
+    monitoring_level: "comprehensive"
+
+  memory:
+    enabled: true
+    storage_backend: "file"
+    storage_path: "./ci_data/memory"
+    retention_policy: "ci"
+
+  cli:
+    enabled: true
+    logging_level: "WARN"
+    interactive_mode: false
+
+# Token Management
+token_management:
+  base_limits:
+    ingestion: 600
+    personas: 1200
+    competitors: 900
+    simulation: 1800
+    analysis: 1500
+    overwatch: 300
+    memory: 200
+    cli: 60
+
+  dynamic_scaling:
+    enabled: false  # Disable for CI predictability
+    load_sensitivity: 1.0
+    priority_weight: 0.8
+    behavior_memory_days: 0
+
+  emergency_overrides:
+    enabled: false
+    max_multiplier: 1.2
+    approval_required: true
+
+# Data Governance
+data_governance:
+  zones:
+    GREEN: "ci_data"
+    AMBER: "ci_analysis"
+  retention_days:
+    GREEN: 7
+    AMBER: 30
+  pii_detection: "strict"
+  encryption: "ci_keys"
+
+# Observability
+observability:
+  logging:
+    level: "WARN"
+    format: "json"
+    file_rotation: "pipeline"
+
+  metrics:
+    enabled: true
+    collection_interval: 10
+    retention_days: 1
+
+  tracing:
+    enabled: true
+    sample_rate: 0.1
+    max_spans_per_request: 25
+
+# Security
+security:
+  authentication: "ci_tokens"
+  authorization: "pipeline_based"
+  encryption: "ci_keys"
+  audit_trail: "comprehensive"
+  audit_retention_days: 7
+
+# Performance
+performance:
+  max_concurrent_requests: 2
+  request_timeout_seconds: 60
+  memory_limit_mb: 512
+  cpu_limit_percent: 50
+
+# CI/CD Features
+ci_cd:
+  pipeline_mode: true
+  artifact_storage: "s3"
+  test_reporting: "junit"
+  coverage_reporting: "cobertura"
+  security_scanning: true
+  performance_benchmarking: true
+
+# Integration Points
+integration:
+  tractionbuild:
+    enabled: false
+    endpoint: "http://ci.tractionbuild.com/api/v1"
+    timeout_seconds: 5
+
+  external_apis:
+    mock_responses: true
+    rate_limiting: true
+    error_simulation: false
+
+# CI Data Management
+ci_data:
+  generation_strategy: "minimal"
+  data_volume: "small"
+  scenario_coverage: "essential"
+  reproducibility: "strict"
+  cleanup_policy: "immediate"
+
+# Build and Deployment
+build:
+  build_timeout_minutes: 30
+  test_timeout_minutes: 15
+  deployment_timeout_minutes: 10
+  rollback_enabled: true
+  canary_deployment: true
+  feature_flags_enabled: false
+
+# Environment Metadata
+metadata:
+  environment: "ci"
+  version: "1.0.0-ci"
+  python_version: "3.12.10"
+  pipeline_id: "${CI_PIPELINE_ID}"
+  build_number: "${CI_BUILD_NUMBER}"
+  commit_sha: "${CI_COMMIT_SHA}"
+  created_at: "2024-12-01T00:00:00Z"
+  updated_at: "2024-12-01T00:00:00Z"

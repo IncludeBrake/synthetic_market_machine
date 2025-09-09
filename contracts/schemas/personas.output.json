@@ -1,0 +1,220 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://smvm.example.com/schemas/personas.output.json",
+  "title": "Personas Output Schema",
+  "description": "Schema for synthetic market personas with demographic and behavioral attributes",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["personas", "metadata"],
+  "properties": {
+    "personas": {
+      "type": "array",
+      "description": "Array of synthetic personas",
+      "minItems": 1,
+      "maxItems": 10000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["persona_id", "demographics", "behavioral_attributes", "economic_profile"],
+        "properties": {
+          "persona_id": {
+            "type": "string",
+            "pattern": "^P-[A-Z]{2}-\\d{6}-[a-f0-9]{4}$",
+            "description": "Unique persona identifier (P-XX-XXXXXX-XXXX)"
+          },
+          "demographics": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["age", "gender", "location", "education_level", "occupation"],
+            "properties": {
+              "age": {
+                "type": "integer",
+                "minimum": 18,
+                "maximum": 100,
+                "description": "Age in years",
+                "unit": "years"
+              },
+              "gender": {
+                "type": "string",
+                "enum": ["male", "female", "non_binary", "prefer_not_to_say"],
+                "description": "Gender identity"
+              },
+              "location": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["country", "region"],
+                "properties": {
+                  "country": {
+                    "type": "string",
+                    "minLength": 2,
+                    "maxLength": 2,
+                    "pattern": "^[A-Z]{2}$",
+                    "description": "ISO 3166-1 alpha-2 country code"
+                  },
+                  "region": {
+                    "type": "string",
+                    "maxLength": 100,
+                    "description": "Geographic region or state"
+                  }
+                }
+              },
+              "education_level": {
+                "type": "string",
+                "enum": ["high_school", "associate", "bachelor", "master", "doctorate", "other"],
+                "description": "Highest education level attained"
+              },
+              "occupation": {
+                "type": "string",
+                "maxLength": 100,
+                "description": "Current occupation or job title"
+              }
+            }
+          },
+          "behavioral_attributes": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["risk_tolerance", "brand_loyalty", "tech_adoption", "shopping_frequency"],
+            "properties": {
+              "risk_tolerance": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 10.0,
+                "description": "Risk tolerance score (0-10, use 2 decimal places)",
+                "unit": "score"
+              },
+              "brand_loyalty": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 10.0,
+                "description": "Brand loyalty score (0-10, use 2 decimal places)",
+                "unit": "score"
+              },
+              "tech_adoption": {
+                "type": "string",
+                "enum": ["innovator", "early_adopter", "early_majority", "late_majority", "laggard"],
+                "description": "Technology adoption category"
+              },
+              "shopping_frequency": {
+                "type": "string",
+                "enum": ["daily", "weekly", "monthly", "quarterly", "annually"],
+                "description": "Shopping frequency"
+              }
+            }
+          },
+          "economic_profile": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["income_range", "net_worth", "debt_to_income_ratio", "savings_rate"],
+            "properties": {
+              "income_range": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["min", "max", "currency"],
+                "properties": {
+                  "min": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 10000000,
+                    "multipleOf": 100,
+                    "description": "Minimum annual income",
+                    "unit": "currency_units"
+                  },
+                  "max": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 10000000,
+                    "multipleOf": 100,
+                    "description": "Maximum annual income",
+                    "unit": "currency_units"
+                  },
+                  "currency": {
+                    "type": "string",
+                    "pattern": "^[A-Z]{3}$",
+                    "description": "ISO 4217 currency code"
+                  }
+                }
+              },
+              "net_worth": {
+                "type": "number",
+                "minimum": -1000000,
+                "maximum": 100000000,
+                "multipleOf": 100,
+                "description": "Net worth in currency units",
+                "unit": "currency_units"
+              },
+              "debt_to_income_ratio": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 5.0,
+                "multipleOf": 0.01,
+                "description": "Debt to income ratio",
+                "unit": "ratio"
+              },
+              "savings_rate": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 1.0,
+                "multipleOf": 0.001,
+                "description": "Savings rate as fraction of income",
+                "unit": "fraction"
+              }
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_id", "span_id", "timestamp", "python_version", "data_zone", "retention_days"],
+      "properties": {
+        "run_id": {
+          "type": "string",
+          "pattern": "^RUN-\\d{8}-\\d{6}-[a-f0-9]{8}$",
+          "description": "Run identifier"
+        },
+        "span_id": {
+          "type": "string",
+          "pattern": "^RUN-\\d{8}-\\d{6}-[a-f0-9]{8}-\\d{4}-[A-Z]{3}$",
+          "description": "Span identifier"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp"
+        },
+        "python_version": {
+          "type": "string",
+          "pattern": "^(3\\.12\\.\\d+|3\\.11\\.13)$",
+          "description": "Python version (3.12.x or 3.11.13 only)"
+        },
+        "python_env_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 hash of Python environment"
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 hash of content"
+        },
+        "composite_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "Composite hash including metadata"
+        },
+        "data_zone": {
+          "type": "string",
+          "enum": ["AMBER"],
+          "description": "Data classification zone"
+        },
+        "retention_days": {
+          "type": "integer",
+          "minimum": 90,
+          "maximum": 2555,
+          "description": "Retention period in days"
+        }
+      }
+    }
+  }
+}

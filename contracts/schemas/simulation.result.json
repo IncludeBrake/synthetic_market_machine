@@ -1,0 +1,450 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://smvm.example.com/schemas/simulation.result.json",
+  "title": "Simulation Result Schema",
+  "description": "Schema for market simulation results and performance metrics",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["simulation_summary", "performance_metrics", "market_outcomes", "metadata"],
+  "properties": {
+    "simulation_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_iterations", "execution_time", "convergence_status", "random_seed"],
+      "properties": {
+        "total_iterations": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100000,
+          "description": "Total number of simulation iterations completed",
+          "unit": "count"
+        },
+        "execution_time": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 86400.0,
+          "multipleOf": 0.001,
+          "description": "Total execution time",
+          "unit": "seconds"
+        },
+        "convergence_status": {
+          "type": "string",
+          "enum": ["converged", "not_converged", "early_termination", "numerical_error"],
+          "description": "Simulation convergence status"
+        },
+        "random_seed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647,
+          "description": "Random seed used for simulation"
+        },
+        "confidence_intervals": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "level": {
+              "type": "number",
+              "minimum": 0.80,
+              "maximum": 0.99,
+              "multipleOf": 0.01,
+              "description": "Confidence level",
+              "unit": "fraction"
+            },
+            "method": {
+              "type": "string",
+              "enum": ["bootstrap", "analytical", "empirical"],
+              "description": "Confidence interval calculation method"
+            }
+          }
+        }
+      }
+    },
+    "performance_metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["returns", "risk_measures", "efficiency_ratios"],
+      "properties": {
+        "returns": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["total_return", "annualized_return"],
+          "properties": {
+            "total_return": {
+              "type": "number",
+              "minimum": -1.0,
+              "maximum": 10.0,
+              "multipleOf": 0.0001,
+              "description": "Total return over simulation period",
+              "unit": "fraction"
+            },
+            "annualized_return": {
+              "type": "number",
+              "minimum": -1.0,
+              "maximum": 5.0,
+              "multipleOf": 0.0001,
+              "description": "Annualized return",
+              "unit": "fraction_per_year"
+            },
+            "return_distribution": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "mean": {
+                  "type": "number",
+                  "minimum": -1.0,
+                  "maximum": 2.0,
+                  "multipleOf": 0.0001,
+                  "description": "Mean return",
+                  "unit": "fraction"
+                },
+                "std_dev": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 2.0,
+                  "multipleOf": 0.0001,
+                  "description": "Return standard deviation",
+                  "unit": "fraction"
+                },
+                "skewness": {
+                  "type": "number",
+                  "minimum": -5.0,
+                  "maximum": 5.0,
+                  "multipleOf": 0.001,
+                  "description": "Return distribution skewness"
+                },
+                "kurtosis": {
+                  "type": "number",
+                  "minimum": -2.0,
+                  "maximum": 10.0,
+                  "multipleOf": 0.001,
+                  "description": "Return distribution kurtosis"
+                }
+              }
+            }
+          }
+        },
+        "risk_measures": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["volatility", "value_at_risk"],
+          "properties": {
+            "volatility": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 2.0,
+              "multipleOf": 0.0001,
+              "description": "Annualized volatility",
+              "unit": "fraction_per_year"
+            },
+            "value_at_risk": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "confidence_level": {
+                  "type": "number",
+                  "minimum": 0.90,
+                  "maximum": 0.99,
+                  "multipleOf": 0.01,
+                  "description": "VaR confidence level",
+                  "unit": "fraction"
+                },
+                "value": {
+                  "type": "number",
+                  "minimum": -1.0,
+                  "maximum": 0.0,
+                  "multipleOf": 0.0001,
+                  "description": "Value at Risk",
+                  "unit": "fraction"
+                },
+                "expected_shortfall": {
+                  "type": "number",
+                  "minimum": -1.0,
+                  "maximum": 0.0,
+                  "multipleOf": 0.0001,
+                  "description": "Expected Shortfall (CVaR)",
+                  "unit": "fraction"
+                }
+              }
+            },
+            "maximum_drawdown": {
+              "type": "number",
+              "minimum": -1.0,
+              "maximum": 0.0,
+              "multipleOf": 0.0001,
+              "description": "Maximum drawdown",
+              "unit": "fraction"
+            }
+          }
+        },
+        "efficiency_ratios": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "sharpe_ratio": {
+              "type": "number",
+              "minimum": -10.0,
+              "maximum": 10.0,
+              "multipleOf": 0.001,
+              "description": "Sharpe ratio"
+            },
+            "sortino_ratio": {
+              "type": "number",
+              "minimum": -10.0,
+              "maximum": 10.0,
+              "multipleOf": 0.001,
+              "description": "Sortino ratio"
+            },
+            "information_ratio": {
+              "type": "number",
+              "minimum": -10.0,
+              "maximum": 10.0,
+              "multipleOf": 0.001,
+              "description": "Information ratio"
+            }
+          }
+        }
+      }
+    },
+    "market_outcomes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["market_states", "agent_behaviors"],
+      "properties": {
+        "market_states": {
+          "type": "array",
+          "description": "Time series of market states",
+          "minItems": 1,
+          "maxItems": 10000,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["timestamp", "price_index", "volume", "volatility"],
+            "properties": {
+              "timestamp": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Market state timestamp"
+              },
+              "price_index": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 100000.0,
+                "multipleOf": 0.01,
+                "description": "Market price index",
+                "unit": "index_points"
+              },
+              "volume": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1000000000,
+                "multipleOf": 1,
+                "description": "Trading volume",
+                "unit": "shares"
+              },
+              "volatility": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 1.0,
+                "multipleOf": 0.0001,
+                "description": "Market volatility",
+                "unit": "fraction"
+              }
+            }
+          }
+        },
+        "agent_behaviors": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "buy_sell_ratio": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 10.0,
+              "multipleOf": 0.001,
+              "description": "Average buy-to-sell ratio across agents"
+            },
+            "herd_behavior_index": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 1.0,
+              "multipleOf": 0.001,
+              "description": "Index of herd behavior (0-1)",
+              "unit": "fraction"
+            },
+            "market_participation": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 1.0,
+              "multipleOf": 0.001,
+              "description": "Fraction of agents actively participating",
+              "unit": "fraction"
+            }
+          }
+        },
+        "scenario_outcomes": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "baseline_comparison": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "return_difference": {
+                  "type": "number",
+                  "minimum": -5.0,
+                  "maximum": 5.0,
+                  "multipleOf": 0.0001,
+                  "description": "Return difference vs baseline",
+                  "unit": "fraction"
+                },
+                "risk_difference": {
+                  "type": "number",
+                  "minimum": -2.0,
+                  "maximum": 2.0,
+                  "multipleOf": 0.0001,
+                  "description": "Risk difference vs baseline",
+                  "unit": "fraction"
+                }
+              }
+            },
+            "stress_test_results": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "survival_rate": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0,
+                  "multipleOf": 0.001,
+                  "description": "Strategy survival rate under stress",
+                  "unit": "fraction"
+                },
+                "recovery_time": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 365,
+                  "description": "Recovery time in days",
+                  "unit": "days"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "validation_results": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "backtesting_metrics": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "mae": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 1.0,
+              "multipleOf": 0.0001,
+              "description": "Mean Absolute Error",
+              "unit": "fraction"
+            },
+            "rmse": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 1.0,
+              "multipleOf": 0.0001,
+              "description": "Root Mean Square Error",
+              "unit": "fraction"
+            },
+            "r_squared": {
+              "type": "number",
+              "minimum": -1.0,
+              "maximum": 1.0,
+              "multipleOf": 0.0001,
+              "description": "R-squared coefficient"
+            }
+          }
+        },
+        "statistical_tests": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "normality_test": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "statistic": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1000.0,
+                  "multipleOf": 0.01,
+                  "description": "Test statistic"
+                },
+                "p_value": {
+                  "type": "number",
+                  "minimum": 0.0,
+                  "maximum": 1.0,
+                  "multipleOf": 0.0001,
+                  "description": "P-value"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_id", "span_id", "timestamp", "python_version", "data_zone", "retention_days"],
+      "properties": {
+        "run_id": {
+          "type": "string",
+          "pattern": "^RUN-\\d{8}-\\d{6}-[a-f0-9]{8}$",
+          "description": "Run identifier"
+        },
+        "span_id": {
+          "type": "string",
+          "pattern": "^RUN-\\d{8}-\\d{6}-[a-f0-9]{8}-\\d{4}-[A-Z]{3}$",
+          "description": "Span identifier"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp"
+        },
+        "python_version": {
+          "type": "string",
+          "pattern": "^(3\\.12\\.\\d+|3\\.11\\.13)$",
+          "description": "Python version (3.12.x or 3.11.13 only)"
+        },
+        "python_env_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 hash of Python environment"
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 hash of content"
+        },
+        "composite_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "Composite hash including metadata"
+        },
+        "data_zone": {
+          "type": "string",
+          "enum": ["AMBER"],
+          "description": "Data classification zone"
+        },
+        "retention_days": {
+          "type": "integer",
+          "minimum": 365,
+          "maximum": 2555,
+          "description": "Retention period in days"
+        }
+      }
+    }
+  }
+}

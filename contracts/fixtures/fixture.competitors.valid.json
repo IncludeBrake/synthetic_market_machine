@@ -1,0 +1,79 @@
+{
+  "competitors": [
+    {
+      "competitor_id": "C-US-202412-a1b2",
+      "company_info": {
+        "name": "FinTech Innovations Inc.",
+        "industry": "fintech",
+        "headquarters": {
+          "country": "US",
+          "city": "San Francisco"
+        },
+        "founded_year": 2018,
+        "employee_count": 250
+      },
+      "market_position": {
+        "market_share": 8.50,
+        "growth_rate": 45.20,
+        "target_segments": ["millennial", "high_net_worth"],
+        "geographic_presence": ["US", "CA", "GB"]
+      },
+      "strengths_weaknesses": {
+        "strengths": ["Innovative technology", "Strong user experience", "Scalable platform"],
+        "weaknesses": ["Limited regulatory approvals", "High customer acquisition cost"],
+        "threat_level": "high"
+      }
+    },
+    {
+      "competitor_id": "C-EU-202412-c3d4",
+      "company_info": {
+        "name": "European Banking Solutions",
+        "industry": "banking",
+        "headquarters": {
+          "country": "DE",
+          "city": "Frankfurt"
+        },
+        "founded_year": 1850,
+        "employee_count": 15000
+      },
+      "market_position": {
+        "market_share": 12.30,
+        "growth_rate": 8.75,
+        "target_segments": ["enterprise", "high_net_worth"],
+        "geographic_presence": ["DE", "FR", "IT", "ES", "GB"]
+      },
+      "strengths_weaknesses": {
+        "strengths": ["Established brand", "Regulatory compliance", "Extensive branch network"],
+        "weaknesses": ["Legacy systems", "Slow innovation", "High operational costs"],
+        "threat_level": "medium"
+      }
+    }
+  ],
+  "market_analysis": {
+    "total_market_size": {
+      "value": 2500000000,
+      "currency": "USD",
+      "year": 2024
+    },
+    "market_growth": {
+      "cagr": 12.5,
+      "forecast_period": {
+        "start_year": 2024,
+        "end_year": 2029
+      }
+    },
+    "competitive_intensity": "high",
+    "barriers_to_entry": ["regulatory_requirements", "technology_complexity", "brand_loyalty"]
+  },
+  "metadata": {
+    "run_id": "RUN-20241201-143052-a1b2c3d4",
+    "span_id": "RUN-20241201-143052-a1b2c3d4-0003-COM",
+    "timestamp": "2024-12-01T14:32:28Z",
+    "python_version": "3.12.10",
+    "python_env_hash": "3b5f4d62df23dedd64bb27db73bd291798b5944ef4cfd2bb1fb6d469e3387b9f",
+    "content_hash": "26d5238afce64b477c47188f7a36a737640a8fe5479d2594f63acb82bd86d043",
+    "composite_hash": "1144b26b5a163d1543ae29cf2ac5fd38b7a0c6f8ddb0aeacaeba6306a59e59c7",
+    "data_zone": "AMBER",
+    "retention_days": 365
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "simulation_parameters": {
+    "scenario": "baseline",
+    "model_type": "monte_carlo",
+    "random_seed": 12345,
+    "confidence_level": 0.95,
+    "iterations": 10000
+  },
+  "market_conditions": {
+    "economic_environment": "expansion",
+    "market_volatility": {
+      "index": 0.25,
+      "regime": "normal"
+    },
+    "interest_rates": {
+      "base_rate": 0.045,
+      "spread": 0.015
+    },
+    "inflation_rate": 0.025,
+    "market_trends": [
+      {
+        "trend_type": "digital_transformation",
+        "impact_magnitude": 0.3
+      },
+      {
+        "trend_type": "regulatory_change",
+        "impact_magnitude": -0.1
+      }
+    ]
+  },
+  "time_parameters": {
+    "start_date": "2024-01-01",
+    "end_date": "2024-12-31",
+    "time_step": "monthly",
+    "warmup_period": 30,
+    "output_frequency": "monthly"
+  },
+  "agent_parameters": {
+    "population_size": 1000,
+    "behavior_models": ["rational", "bounded_rational"],
+    "adaptation_rate": 0.05
+  },
+  "validation_parameters": {
+    "backtesting_window": 365,
+    "validation_metrics": ["mean_absolute_error", "r_squared", "sharpe_ratio"],
+    "benchmark_comparison": true
+  },
+  "metadata": {
+    "run_id": "RUN-20241201-143052-a1b2c3d4",
+    "span_id": "RUN-20241201-143052-a1b2c3d4-0005-SIM",
+    "timestamp": "2024-12-01T14:34:55Z",
+    "python_version": "3.12.10",
+    "python_env_hash": "3b5f4d62df23dedd64bb27db73bd291798b5944ef4cfd2bb1fb6d469e3387b9f",
+    "content_hash": "9f64c0a23c756c4530fb0e3c48f8ada71fe8811700742827f914efd4e3b657ed",
+    "composite_hash": "afa78720fe530dbe82d69f6a8ac66bd4c4a4bf9664cb2afcc0401d1c991abd08",
+    "data_zone": "AMBER",
+    "retention_days": 90
+  }
+}

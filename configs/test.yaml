@@ -1,0 +1,157 @@
+# SMVM Test Environment Configuration
+# Testing environment with comprehensive validation and monitoring
+
+# Service Configuration
+services:
+  ingestion:
+    enabled: true
+    storage_backend: "file"
+    storage_path: "./test_data/ingestion"
+    max_batch_size: 500
+    validation_mode: "strict"
+
+  personas:
+    enabled: true
+    synthesis_engine: "test_optimized"
+    max_personas: 500
+    bias_control: "strict"
+    diversity_target: 0.8
+
+  competitors:
+    enabled: true
+    taxonomy_version: "1.0"
+    pricing_normalization: "comprehensive"
+    cache_enabled: false
+
+  simulation:
+    enabled: true
+    max_iterations: 5000
+    realism_enforcement: "strict"
+    seed_generation: "fixed"
+
+  analysis:
+    enabled: true
+    analysis_depth: "comprehensive"
+    confidence_threshold: 0.9
+    cache_enabled: false
+
+  overwatch:
+    enabled: true
+    risk_threshold: 0.4
+    token_ceiling_enforcement: "strict"
+    monitoring_level: "comprehensive"
+
+  memory:
+    enabled: true
+    storage_backend: "file"
+    storage_path: "./test_data/memory"
+    retention_policy: "test"
+
+  cli:
+    enabled: true
+    logging_level: "INFO"
+    interactive_mode: false
+
+# Token Management
+token_management:
+  base_limits:
+    ingestion: 800
+    personas: 1500
+    competitors: 1200
+    simulation: 2500
+    analysis: 1800
+    overwatch: 400
+    memory: 250
+    cli: 80
+
+  dynamic_scaling:
+    enabled: true
+    load_sensitivity: 0.8
+    priority_weight: 0.5
+    behavior_memory_days: 1
+
+  emergency_overrides:
+    enabled: false
+    max_multiplier: 1.5
+    approval_required: true
+
+# Data Governance
+data_governance:
+  zones:
+    GREEN: "test_data"
+    AMBER: "test_analysis"
+  retention_days:
+    GREEN: 30
+    AMBER: 90
+  pii_detection: "strict"
+  encryption: "test_keys"
+
+# Observability
+observability:
+  logging:
+    level: "INFO"
+    format: "structured"
+    file_rotation: "test_run"
+
+  metrics:
+    enabled: true
+    collection_interval: 30
+    retention_days: 7
+
+  tracing:
+    enabled: true
+    sample_rate: 0.5
+    max_spans_per_request: 50
+
+# Security
+security:
+  authentication: "test_tokens"
+  authorization: "role_based"
+  encryption: "test_keys"
+  audit_trail: "comprehensive"
+  audit_retention_days: 30
+
+# Performance
+performance:
+  max_concurrent_requests: 5
+  request_timeout_seconds: 120
+  memory_limit_mb: 1024
+  cpu_limit_percent: 60
+
+# Testing Features
+testing:
+  test_mode: true
+  mock_external_services: true
+  deterministic_behavior: true
+  error_injection: "controlled"
+  performance_profiling: true
+  coverage_reporting: true
+
+# Integration Points
+integration:
+  tractionbuild:
+    enabled: false
+    endpoint: "http://test.tractionbuild.com/api/v1"
+    timeout_seconds: 10
+
+  external_apis:
+    mock_responses: true
+    rate_limiting: true
+    error_simulation: "configurable"
+
+# Test Data Management
+test_data:
+  generation_strategy: "comprehensive"
+  data_volume: "medium"
+  scenario_coverage: "high"
+  reproducibility: "strict"
+  cleanup_policy: "automatic"
+
+# Environment Metadata
+metadata:
+  environment: "testing"
+  version: "1.0.0-test"
+  python_version: "3.12.10"
+  test_coverage_target: 0.85
+  created_at: "2024-12-01T00:00:00Z"
+  updated_at: "2024-12-01T00:00:00Z"

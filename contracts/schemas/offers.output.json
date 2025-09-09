@@ -1,0 +1,378 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://smvm.example.com/schemas/offers.output.json",
+  "title": "Offers Output Schema",
+  "description": "Schema for product and service offers with pricing and positioning data",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["offers", "pricing_strategy", "metadata"],
+  "properties": {
+    "offers": {
+      "type": "array",
+      "description": "Array of product/service offers",
+      "minItems": 1,
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["offer_id", "product_info", "pricing", "target_audience", "positioning"],
+        "properties": {
+          "offer_id": {
+            "type": "string",
+            "pattern": "^O-[A-Z]{2}-\\d{6}-[a-f0-9]{4}$",
+            "description": "Unique offer identifier (O-XX-XXXXXX-XXXX)"
+          },
+          "product_info": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["name", "category", "description", "features"],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "description": "Product or service name"
+              },
+              "category": {
+                "type": "string",
+                "enum": ["checking_account", "savings_account", "credit_card", "loan", "investment", "insurance", "payment_service", "fintech_app", "other"],
+                "description": "Product category"
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 500,
+                "description": "Product description (no free-text outside designated fields)"
+              },
+              "features": {
+                "type": "array",
+                "description": "Key product features",
+                "minItems": 1,
+                "maxItems": 20,
+                "items": {
+                  "type": "string",
+                  "maxLength": 100,
+                  "description": "Product feature"
+                }
+              }
+            }
+          },
+          "pricing": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["model", "currency"],
+            "properties": {
+              "model": {
+                "type": "string",
+                "enum": ["free", "freemium", "subscription", "transaction_based", "tiered", "usage_based"],
+                "description": "Pricing model"
+              },
+              "currency": {
+                "type": "string",
+                "pattern": "^[A-Z]{3}$",
+                "description": "ISO 4217 currency code"
+              },
+              "base_price": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100000,
+                "multipleOf": 0.01,
+                "description": "Base price amount",
+                "unit": "currency_units"
+              },
+              "monthly_fee": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10000,
+                "multipleOf": 0.01,
+                "description": "Monthly recurring fee",
+                "unit": "currency_units_per_month"
+              },
+              "transaction_fee": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "percentage": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 10.0,
+                    "multipleOf": 0.01,
+                    "description": "Transaction fee as percentage",
+                    "unit": "percentage"
+                  },
+                  "fixed_amount": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1000,
+                    "multipleOf": 0.01,
+                    "description": "Fixed transaction fee",
+                    "unit": "currency_units"
+                  }
+                }
+              },
+              "tiers": {
+                "type": "array",
+                "description": "Pricing tiers for tiered model",
+                "minItems": 0,
+                "maxItems": 10,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": ["name", "price", "limits"],
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "maxLength": 50,
+                      "description": "Tier name"
+                    },
+                    "price": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 100000,
+                      "multipleOf": 0.01,
+                      "description": "Tier price",
+                      "unit": "currency_units"
+                    },
+                    "limits": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "transactions": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 1000000,
+                          "description": "Monthly transaction limit",
+                          "unit": "count_per_month"
+                        },
+                        "users": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 100000,
+                          "description": "User limit",
+                          "unit": "count"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "target_audience": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["demographics", "behavioral_segments"],
+            "properties": {
+              "demographics": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "age_range": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "min": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 120,
+                        "description": "Minimum age",
+                        "unit": "years"
+                      },
+                      "max": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 120,
+                        "description": "Maximum age",
+                        "unit": "years"
+                      }
+                    }
+                  },
+                  "income_range": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "min": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 10000000,
+                        "multipleOf": 100,
+                        "description": "Minimum annual income",
+                        "unit": "currency_units"
+                      },
+                      "max": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 10000000,
+                        "multipleOf": 100,
+                        "description": "Maximum annual income",
+                        "unit": "currency_units"
+                      }
+                    }
+                  }
+                }
+              },
+              "behavioral_segments": {
+                "type": "array",
+                "description": "Behavioral target segments",
+                "minItems": 0,
+                "maxItems": 10,
+                "items": {
+                  "type": "string",
+                  "enum": ["high_value", "frequent_user", "tech_savvy", "price_sensitive", "loyal_customer", "early_adopter", "risk_averse", "premium_seeker"],
+                  "description": "Behavioral segment"
+                }
+              }
+            }
+          },
+          "positioning": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["unique_value_proposition", "competitive_advantages"],
+            "properties": {
+              "unique_value_proposition": {
+                "type": "string",
+                "maxLength": 300,
+                "description": "Unique value proposition (no free-text outside designated fields)"
+              },
+              "competitive_advantages": {
+                "type": "array",
+                "description": "Key competitive advantages",
+                "minItems": 1,
+                "maxItems": 10,
+                "items": {
+                  "type": "string",
+                  "maxLength": 150,
+                  "description": "Competitive advantage"
+                }
+              },
+              "market_position": {
+                "type": "string",
+                "enum": ["budget", "mid_range", "premium", "luxury", "niche"],
+                "description": "Market positioning"
+              }
+            }
+          }
+        }
+      }
+    },
+    "pricing_strategy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["overall_approach", "profit_margins", "market_penetration"],
+      "properties": {
+        "overall_approach": {
+          "type": "string",
+          "enum": ["cost_plus", "value_based", "competition_based", "penetration", "skimming", "bundling"],
+          "description": "Overall pricing strategy approach"
+        },
+        "profit_margins": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "target_margin": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 1.0,
+              "multipleOf": 0.01,
+              "description": "Target profit margin",
+              "unit": "fraction"
+            },
+            "break_even_analysis": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "fixed_costs": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1000000000,
+                  "multipleOf": 1000,
+                  "description": "Monthly fixed costs",
+                  "unit": "currency_units_per_month"
+                },
+                "variable_cost_per_unit": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 100000,
+                  "multipleOf": 0.01,
+                  "description": "Variable cost per unit",
+                  "unit": "currency_units"
+                }
+              }
+            }
+          }
+        },
+        "market_penetration": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "target_market_share": {
+              "type": "number",
+              "minimum": 0.0,
+              "maximum": 100.0,
+              "multipleOf": 0.01,
+              "description": "Target market share",
+              "unit": "percentage"
+            },
+            "adoption_curve": {
+              "type": "string",
+              "enum": ["slow", "moderate", "rapid", "exponential"],
+              "description": "Expected adoption curve"
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_id", "span_id", "timestamp", "python_version", "data_zone", "retention_days"],
+      "properties": {
+        "run_id": {
+          "type": "string",
+          "pattern": "^RUN-\\d{8}-\\d{6}-[a-f0-9]{8}$",
+          "description": "Run identifier"
+        },
+        "span_id": {
+          "type": "string",
+          "pattern": "^RUN-\\d{8}-\\d{6}-[a-f0-9]{8}-\\d{4}-[A-Z]{3}$",
+          "description": "Span identifier"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 timestamp"
+        },
+        "python_version": {
+          "type": "string",
+          "pattern": "^(3\\.12\\.\\d+|3\\.11\\.13)$",
+          "description": "Python version (3.12.x or 3.11.13 only)"
+        },
+        "python_env_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 hash of Python environment"
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "SHA-256 hash of content"
+        },
+        "composite_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "Composite hash including metadata"
+        },
+        "data_zone": {
+          "type": "string",
+          "enum": ["AMBER"],
+          "description": "Data classification zone"
+        },
+        "retention_days": {
+          "type": "integer",
+          "minimum": 180,
+          "maximum": 2555,
+          "description": "Retention period in days"
+        }
+      }
+    }
+  }
+}
