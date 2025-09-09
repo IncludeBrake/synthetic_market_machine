@@ -1,0 +1,22 @@
+{
+  "test_timestamp": "2025-09-09T22:03:10.576174Z",
+  "python_version": "3.12.10",
+  "wheel_status": "installed",
+  "schemas_tested": 5,
+  "schemas_passed": 16,
+  "schemas_failed": 1,
+  "fixtures_tested": 5,
+  "fixtures_passed": 4,
+  "fixtures_failed": 0,
+  "contract_violations": [
+    {
+      "component": "outputs/personas.output.json",
+      "violation_type": "fixture_conformance",
+      "details": "Additional properties are not allowed ('bias_controls_applied', 'confidence_score' were unexpected)\n\nFailed validating 'additionalProperties' in schema:\n    {'type': 'object',\n     'properties': {'personas': {'type': 'array',\n                                 'items': {'type': 'object',\n                                           'properties': {'id': {'type': 'string'},\n                                                          'demographics': {'type': 'object'},\n                                                          'psychographics': {'type': 'object'}}}}},\n     'required': ['personas'],\n     'additionalProperties': False}\n\nOn instance:\n    {'personas': [{'id': 'persona_1',\n                   'demographics': {'age': 35, 'income': 75000},\n                   'psychographics': {'tech_savvy': True,\n                                      'risk_tolerance': 0.7},\n                   'behavioral': {'purchase_frequency': 'monthly',\n                                  'brand_loyalty': 0.8}}],\n     'confidence_score': 0.82,\n     'bias_controls_applied': True}",
+      "timestamp": "2025-09-09T22:03:10.594555Z"
+    }
+  ],
+  "schema_coverage": 100.0,
+  "contract_compliance_score": 320.0,
+  "fixture_compliance_score": 80.0
+}
