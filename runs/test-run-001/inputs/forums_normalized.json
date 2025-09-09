@@ -1,0 +1,124 @@
+{
+  "run_id": "RUN-20241201-120000-a1b2c3d4",
+  "input_type": "forum_reviews_data",
+  "collection_timestamp": "2024-12-01T12:00:00Z",
+  "normalization_timestamp": "2024-12-01T12:05:00Z",
+  "adapter_version": "1.0.0",
+  "python_version": "3.12.10",
+  "data_zone": "AMBER",
+  "retention_days": 90,
+  "topics": ["artificial intelligence", "machine learning"],
+  "content_types": ["reviews", "discussions"],
+  "posts": [
+    {
+      "id": "reddit_001",
+      "platform": "reddit",
+      "topic": "artificial intelligence",
+      "title": "AI is revolutionizing healthcare diagnostics",
+      "content": "I've been researching how artificial intelligence is transforming medical diagnostics. The accuracy improvements are remarkable, with some studies showing AI can detect conditions 30% earlier than traditional methods. What are your thoughts on the practical implementation challenges?",
+      "author": "anonymous_user_12345",
+      "timestamp": "2024-12-01T08:30:00Z",
+      "upvotes": 234,
+      "comments": 67,
+      "sentiment": "positive",
+      "engagement_score": 301
+    },
+    {
+      "id": "reddit_002",
+      "platform": "reddit",
+      "topic": "machine learning",
+      "title": "Practical ML deployment in production",
+      "content": "After months of working on ML models in development, I'm now facing the challenges of deploying them to production. The main issues seem to be around model versioning, monitoring, and performance optimization. Has anyone else dealt with these challenges?",
+      "author": "anonymous_user_67890",
+      "timestamp": "2024-12-01T09:15:00Z",
+      "upvotes": 156,
+      "comments": 43,
+      "sentiment": "neutral",
+      "engagement_score": 199
+    }
+  ],
+  "reviews": [
+    {
+      "id": "review_001",
+      "platform": "product_reviews",
+      "topic": "artificial intelligence",
+      "product_name": "AI Diagnostic Assistant Pro",
+      "rating": 4,
+      "title": "Excellent accuracy but steep learning curve",
+      "content": "I've been using this AI diagnostic tool for 3 months now. The accuracy is impressive - it caught a potential issue that I would have missed. However, the interface takes some time to learn effectively. Overall, it's worth the investment for serious practitioners.",
+      "author": "anonymous_user_11111",
+      "timestamp": "2024-12-01T07:45:00Z",
+      "verified_purchase": true,
+      "helpful_votes": 23,
+      "sentiment": "positive",
+      "rating_normalized": 0.8
+    },
+    {
+      "id": "review_002",
+      "platform": "product_reviews",
+      "topic": "machine learning",
+      "product_name": "ML Studio Cloud Platform",
+      "rating": 5,
+      "title": "Game-changer for ML workflows",
+      "content": "This platform has completely transformed how we approach machine learning projects. The collaborative features, extensive model library, and deployment tools make it invaluable. The customer support is also excellent when we need help.",
+      "author": "anonymous_user_22222",
+      "timestamp": "2024-12-01T06:20:00Z",
+      "verified_purchase": true,
+      "helpful_votes": 31,
+      "sentiment": "positive",
+      "rating_normalized": 1.0
+    }
+  ],
+  "topic_summary": {
+    "artificial_intelligence": {
+      "post_count": 1,
+      "review_count": 1,
+      "total_engagement": 658,
+      "average_rating": 4.0,
+      "sentiment_distribution": {
+        "positive": 1,
+        "neutral": 1,
+        "negative": 0
+      }
+    },
+    "machine_learning": {
+      "post_count": 1,
+      "review_count": 1,
+      "total_engagement": 230,
+      "average_rating": 5.0,
+      "sentiment_distribution": {
+        "positive": 1,
+        "neutral": 1,
+        "negative": 0
+      }
+    }
+  },
+  "sentiment_summary": {
+    "positive_percentage": 60.0,
+    "negative_percentage": 0.0,
+    "neutral_percentage": 40.0,
+    "total_analyzed": 5
+  },
+  "engagement_metrics": {
+    "total_posts": 2,
+    "total_reviews": 2,
+    "total_discussions": 1,
+    "average_upvotes": 195.0,
+    "average_comments": 55.0,
+    "average_rating": 4.5
+  },
+  "sanitization_metadata": {
+    "redactions_applied": 3,
+    "redaction_details": [
+      "author: anonymized",
+      "url: parameters removed",
+      "email: removed"
+    ],
+    "sanitization_timestamp": "2024-12-01T12:00:00Z",
+    "sanitization_level": "high",
+    "pii_detection_performed": true,
+    "data_classification": "public_forum_data"
+  },
+  "data_quality_score": 0.87,
+  "provenance_hash": "b2c3d4e5f6789012345678901234567890123456789012345678901234567890"
+}

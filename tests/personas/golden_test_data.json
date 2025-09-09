@@ -1,0 +1,322 @@
+{
+  "fixture_id": "personas_golden_v1.0.0",
+  "fixture_version": "1.0.0",
+  "test_scenarios": [
+    {
+      "scenario_id": "scenario_001",
+      "scenario_name": "Young Professional Tech User",
+      "input_parameters": {
+        "target_count": 1,
+        "market_segment": "technology",
+        "demographic_focus": "millennial_tech_savvy",
+        "psychographic_sources": ["pew_research", "claritas_prizm"],
+        "bias_controls": true,
+        "confidence_level": 0.95
+      },
+      "expected_output": {
+        "personas": [
+          {
+            "persona_id": "TECH_SAVVY_MILLENNIAL_001",
+            "demographics": {
+              "age": 28,
+              "gender": "female",
+              "location": {
+                "country": "US",
+                "region": "CA",
+                "city_type": "urban"
+              },
+              "education_level": "bachelor",
+              "occupation": "Software Engineer",
+              "income_range": {
+                "min": 85000,
+                "max": 110000,
+                "currency": "USD"
+              }
+            },
+            "behavioral_attributes": {
+              "technology_adoption": "early_adopter",
+              "risk_tolerance": 7.2,
+              "brand_loyalty": 6.8,
+              "shopping_frequency": "weekly",
+              "decision_making_style": "data_driven"
+            },
+            "psychographic_profile": {
+              "values": ["innovation", "efficiency", "career_growth"],
+              "lifestyle": "urban_professional",
+              "interests": ["technology", "startups", "personal_development"],
+              "media_consumption": ["tech_podcasts", "industry_blogs", "professional_networks"]
+            },
+            "market_receptivity": {
+              "product_categories": ["productivity_tools", "fintech", "healthtech"],
+              "preferred_channels": ["app_stores", "tech_reviews", "professional_networks"],
+              "price_sensitivity": "medium",
+              "brand_preferences": ["innovative", "user_friendly", "ethically_sound"]
+            }
+          }
+        ],
+        "metadata": {
+          "generation_timestamp": "2024-12-01T12:00:00Z",
+          "synthesis_method": "multi_stage_pipeline",
+          "data_sources_used": ["pew_research", "claritas_prizm", "federal_reserve"],
+          "quality_score": 0.89,
+          "diversity_score": 0.92,
+          "bias_detected": false
+        },
+        "provenance": {
+          "adapter_version": "1.0.0",
+          "pipeline_stages": ["demographic_foundation", "psychographic_enrichment", "behavioral_patterning", "validation"],
+          "validation_checks": ["demographic_completeness", "psychographic_validity", "behavioral_consistency"]
+        }
+      },
+      "validation_criteria": {
+        "demographic_completeness": {
+          "required_fields": ["age", "gender", "location", "education_level", "occupation", "income_range"],
+          "tolerance": 0.95
+        },
+        "psychographic_validity": {
+          "correlation_checks": ["age_income", "education_occupation", "location_lifestyle"],
+          "threshold": 0.80
+        },
+        "behavioral_consistency": {
+          "pattern_validation": ["risk_tolerance_range", "brand_loyalty_distribution"],
+          "acceptable_range": [0.0, 10.0]
+        },
+        "diversity_requirements": {
+          "age_distribution_tolerance": 0.10,
+          "gender_balance_tolerance": 0.15,
+          "geographic_coverage": ["urban", "suburban", "rural"]
+        },
+        "quality_thresholds": {
+          "overall_quality_score": 0.85,
+          "confidence_level": 0.90,
+          "data_completeness": 0.95
+        }
+      }
+    },
+    {
+      "scenario_id": "scenario_002",
+      "scenario_name": "Middle-Aged Conservative Investor",
+      "input_parameters": {
+        "target_count": 1,
+        "market_segment": "finance",
+        "demographic_focus": "gen_x_conservative",
+        "psychographic_sources": ["federal_reserve", "pew_research"],
+        "bias_controls": true,
+        "confidence_level": 0.95
+      },
+      "expected_output": {
+        "personas": [
+          {
+            "persona_id": "CONSERVATIVE_GENX_002",
+            "demographics": {
+              "age": 52,
+              "gender": "male",
+              "location": {
+                "country": "US",
+                "region": "TX",
+                "city_type": "suburban"
+              },
+              "education_level": "master",
+              "occupation": "Financial Advisor",
+              "income_range": {
+                "min": 125000,
+                "max": 175000,
+                "currency": "USD"
+              }
+            },
+            "behavioral_attributes": {
+              "technology_adoption": "pragmatic_adopter",
+              "risk_tolerance": 4.1,
+              "brand_loyalty": 8.5,
+              "shopping_frequency": "monthly",
+              "decision_making_style": "analytical"
+            },
+            "psychographic_profile": {
+              "values": ["security", "tradition", "financial_stability"],
+              "lifestyle": "established_professional",
+              "interests": ["investing", "real_estate", "financial_planning"],
+              "media_consumption": ["financial_news", "professional_journals", "networking_events"]
+            },
+            "market_receptivity": {
+              "product_categories": ["wealth_management", "retirement_planning", "insurance"],
+              "preferred_channels": ["financial_advisors", "professional_networks", "established_brands"],
+              "price_sensitivity": "low",
+              "brand_preferences": ["reliable", "established", "trustworthy"]
+            }
+          }
+        ],
+        "metadata": {
+          "generation_timestamp": "2024-12-01T12:15:00Z",
+          "synthesis_method": "multi_stage_pipeline",
+          "data_sources_used": ["federal_reserve", "pew_research", "claritas_prizm"],
+          "quality_score": 0.91,
+          "diversity_score": 0.88,
+          "bias_detected": false
+        },
+        "provenance": {
+          "adapter_version": "1.0.0",
+          "pipeline_stages": ["demographic_foundation", "psychographic_enrichment", "behavioral_patterning", "validation"],
+          "validation_checks": ["demographic_completeness", "psychographic_validity", "behavioral_consistency"]
+        }
+      },
+      "validation_criteria": {
+        "demographic_completeness": {
+          "required_fields": ["age", "gender", "location", "education_level", "occupation", "income_range"],
+          "tolerance": 0.95
+        },
+        "psychographic_validity": {
+          "correlation_checks": ["age_income", "education_occupation", "location_lifestyle"],
+          "threshold": 0.80
+        },
+        "behavioral_consistency": {
+          "pattern_validation": ["risk_tolerance_range", "brand_loyalty_distribution"],
+          "acceptable_range": [0.0, 10.0]
+        },
+        "diversity_requirements": {
+          "age_distribution_tolerance": 0.10,
+          "gender_balance_tolerance": 0.15,
+          "geographic_coverage": ["urban", "suburban", "rural"]
+        },
+        "quality_thresholds": {
+          "overall_quality_score": 0.85,
+          "confidence_level": 0.90,
+          "data_completeness": 0.95
+        }
+      }
+    },
+    {
+      "scenario_id": "scenario_003",
+      "scenario_name": "Diverse Persona Set (3 personas)",
+      "input_parameters": {
+        "target_count": 3,
+        "market_segment": "mixed",
+        "demographic_focus": "diverse_population",
+        "psychographic_sources": ["pew_research", "claritas_prizm", "federal_reserve"],
+        "bias_controls": true,
+        "confidence_level": 0.95
+      },
+      "expected_output": {
+        "personas": [
+          {
+            "persona_id": "DIVERSE_YOUNG_003",
+            "demographics": {
+              "age": 24,
+              "gender": "non_binary",
+              "location": {
+                "country": "US",
+                "region": "NY",
+                "city_type": "urban"
+              },
+              "education_level": "bachelor",
+              "occupation": "Marketing Specialist",
+              "income_range": {
+                "min": 55000,
+                "max": 75000,
+                "currency": "USD"
+              }
+            },
+            "behavioral_attributes": {
+              "technology_adoption": "innovator",
+              "risk_tolerance": 8.1,
+              "brand_loyalty": 5.2,
+              "shopping_frequency": "frequent",
+              "decision_making_style": "intuitive"
+            }
+          },
+          {
+            "persona_id": "DIVERSE_MIDDLE_004",
+            "demographics": {
+              "age": 41,
+              "gender": "female",
+              "location": {
+                "country": "US",
+                "region": "IL",
+                "city_type": "suburban"
+              },
+              "education_level": "bachelor",
+              "occupation": "Project Manager",
+              "income_range": {
+                "min": 85000,
+                "max": 105000,
+                "currency": "USD"
+              }
+            },
+            "behavioral_attributes": {
+              "technology_adoption": "mainstream_adopter",
+              "risk_tolerance": 5.8,
+              "brand_loyalty": 7.9,
+              "shopping_frequency": "regular",
+              "decision_making_style": "deliberative"
+            }
+          },
+          {
+            "persona_id": "DIVERSE_SENIOR_005",
+            "demographics": {
+              "age": 68,
+              "gender": "male",
+              "location": {
+                "country": "US",
+                "region": "FL",
+                "city_type": "suburban"
+              },
+              "education_level": "associate",
+              "occupation": "Retired",
+              "income_range": {
+                "min": 45000,
+                "max": 65000,
+                "currency": "USD"
+              }
+            },
+            "behavioral_attributes": {
+              "technology_adoption": "late_adopter",
+              "risk_tolerance": 3.2,
+              "brand_loyalty": 9.1,
+              "shopping_frequency": "occasional",
+              "decision_making_style": "traditional"
+            }
+          }
+        ],
+        "metadata": {
+          "generation_timestamp": "2024-12-01T12:30:00Z",
+          "synthesis_method": "multi_stage_pipeline",
+          "data_sources_used": ["pew_research", "claritas_prizm", "federal_reserve"],
+          "quality_score": 0.87,
+          "diversity_score": 0.94,
+          "bias_detected": false
+        },
+        "provenance": {
+          "adapter_version": "1.0.0",
+          "pipeline_stages": ["demographic_foundation", "psychographic_enrichment", "behavioral_patterning", "validation"],
+          "validation_checks": ["demographic_completeness", "psychographic_validity", "behavioral_consistency", "diversity_enforcement"]
+        }
+      },
+      "validation_criteria": {
+        "demographic_completeness": {
+          "required_fields": ["age", "gender", "location", "education_level", "occupation", "income_range"],
+          "tolerance": 0.95
+        },
+        "psychographic_validity": {
+          "correlation_checks": ["age_income", "education_occupation", "location_lifestyle"],
+          "threshold": 0.80
+        },
+        "behavioral_consistency": {
+          "pattern_validation": ["risk_tolerance_range", "brand_loyalty_distribution"],
+          "acceptable_range": [0.0, 10.0]
+        },
+        "diversity_requirements": {
+          "age_distribution_tolerance": 0.10,
+          "gender_balance_tolerance": 0.15,
+          "geographic_coverage": ["urban", "suburban", "rural"],
+          "minimum_personas_per_age_group": 1,
+          "gender_diversity_required": true
+        },
+        "quality_thresholds": {
+          "overall_quality_score": 0.85,
+          "confidence_level": 0.90,
+          "data_completeness": 0.95,
+          "diversity_score": 0.85
+        }
+      }
+    }
+  ]
+}

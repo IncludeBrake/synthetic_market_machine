@@ -1,0 +1,270 @@
+{
+  "run_id": "RUN-20241201-140000-a1b2c3d4",
+  "span_id": "persona-generation-span-001",
+  "timestamp": "2024-12-01T14:00:00Z",
+  "python_version": "3.12.10",
+  "python_env_hash": "a1b2c3d4e5f6789012345678901234567890123456789012345678901234567890",
+  "content_hash": "b2c3d4e5f6789012345678901234567890123456789012345678901234567890",
+  "composite_hash": "c3d4e5f6789012345678901234567890123456789012345678901234567890",
+  "data_zone": "GREEN",
+  "retention_days": 90,
+  "personas": [
+    {
+      "persona_id": "TECH_SAVVY_MILLENNIAL_001",
+      "demographics": {
+        "age": 28,
+        "gender": "female",
+        "location": {
+          "country": "US",
+          "region": "CA",
+          "city_type": "urban"
+        },
+        "education_level": "bachelor",
+        "occupation": "Software Engineer",
+        "income_range": {
+          "min": 85000,
+          "max": 110000,
+          "currency": "USD"
+        }
+      },
+      "behavioral_attributes": {
+        "technology_adoption": "early_adopter",
+        "risk_tolerance": 7.2,
+        "brand_loyalty": 6.8,
+        "shopping_frequency": "weekly",
+        "decision_making_style": "data_driven"
+      },
+      "psychographic_profile": {
+        "values": ["innovation", "efficiency", "career_growth"],
+        "lifestyle": "urban_professional",
+        "interests": ["technology", "startups", "personal_development"],
+        "media_consumption": ["tech_podcasts", "industry_blogs", "professional_networks"]
+      },
+      "market_receptivity": {
+        "product_categories": ["productivity_tools", "fintech", "healthtech"],
+        "preferred_channels": ["app_stores", "tech_reviews", "professional_networks"],
+        "price_sensitivity": "medium",
+        "brand_preferences": ["innovative", "user_friendly", "ethically_sound"]
+      }
+    },
+    {
+      "persona_id": "CONSERVATIVE_GENX_002",
+      "demographics": {
+        "age": 52,
+        "gender": "male",
+        "location": {
+          "country": "US",
+          "region": "TX",
+          "city_type": "suburban"
+        },
+        "education_level": "master",
+        "occupation": "Financial Advisor",
+        "income_range": {
+          "min": 125000,
+          "max": 175000,
+          "currency": "USD"
+        }
+      },
+      "behavioral_attributes": {
+        "technology_adoption": "pragmatic_adopter",
+        "risk_tolerance": 4.1,
+        "brand_loyalty": 8.5,
+        "shopping_frequency": "monthly",
+        "decision_making_style": "analytical"
+      },
+      "psychographic_profile": {
+        "values": ["security", "tradition", "financial_stability"],
+        "lifestyle": "established_professional",
+        "interests": ["investing", "real_estate", "financial_planning"],
+        "media_consumption": ["financial_news", "professional_journals", "networking_events"]
+      },
+      "market_receptivity": {
+        "product_categories": ["wealth_management", "retirement_planning", "insurance"],
+        "preferred_channels": ["financial_advisors", "professional_networks", "established_brands"],
+        "price_sensitivity": "low",
+        "brand_preferences": ["reliable", "established", "trustworthy"]
+      }
+    },
+    {
+      "persona_id": "DIGITAL_NATIVE_GENZ_003",
+      "demographics": {
+        "age": 22,
+        "gender": "non_binary",
+        "location": {
+          "country": "US",
+          "region": "NY",
+          "city_type": "urban"
+        },
+        "education_level": "bachelor",
+        "occupation": "Content Creator",
+        "income_range": {
+          "min": 45000,
+          "max": 75000,
+          "currency": "USD"
+        }
+      },
+      "behavioral_attributes": {
+        "technology_adoption": "innovator",
+        "risk_tolerance": 8.7,
+        "brand_loyalty": 5.1,
+        "shopping_frequency": "frequent",
+        "decision_making_style": "intuitive"
+      },
+      "psychographic_profile": {
+        "values": ["authenticity", "social_impact", "creativity"],
+        "lifestyle": "digital_nomad",
+        "interests": ["social_media", "sustainability", "digital_art"],
+        "media_consumption": ["tiktok", "instagram", "youtube", "streaming_platforms"]
+      },
+      "market_receptivity": {
+        "product_categories": ["creator_tools", "social_media", "sustainable_products"],
+        "preferred_channels": ["social_commerce", "influencer_marketing", "subscription_services"],
+        "price_sensitivity": "high",
+        "brand_preferences": ["authentic", "socially_conscious", "trendy"]
+      }
+    },
+    {
+      "persona_id": "EXECUTIVE_BABY_BOOMER_004",
+      "demographics": {
+        "age": 65,
+        "gender": "female",
+        "location": {
+          "country": "US",
+          "region": "FL",
+          "city_type": "suburban"
+        },
+        "education_level": "master",
+        "occupation": "Retired Executive",
+        "income_range": {
+          "min": 150000,
+          "max": 250000,
+          "currency": "USD"
+        }
+      },
+      "behavioral_attributes": {
+        "technology_adoption": "late_adopter",
+        "risk_tolerance": 3.8,
+        "brand_loyalty": 9.2,
+        "shopping_frequency": "occasional",
+        "decision_making_style": "traditional"
+      },
+      "psychographic_profile": {
+        "values": ["legacy", "community", "wisdom"],
+        "lifestyle": "retired_executive",
+        "interests": ["philanthropy", "travel", "family", "community_service"],
+        "media_consumption": ["newspapers", "public_broadcasting", "books", "community_newsletters"]
+      },
+      "market_receptivity": {
+        "product_categories": ["luxury_travel", "philanthropic_services", "health_wellness"],
+        "preferred_channels": ["personal_referrals", "established_retailers", "professional_services"],
+        "price_sensitivity": "low",
+        "brand_preferences": ["premium", "reputable", "traditional"]
+      }
+    },
+    {
+      "persona_id": "MIDDLE_CLASS_PARENT_005",
+      "demographics": {
+        "age": 38,
+        "gender": "female",
+        "location": {
+          "country": "US",
+          "region": "OH",
+          "city_type": "suburban"
+        },
+        "education_level": "bachelor",
+        "occupation": "Teacher",
+        "income_range": {
+          "min": 65000,
+          "max": 85000,
+          "currency": "USD"
+        }
+      },
+      "behavioral_attributes": {
+        "technology_adoption": "mainstream_adopter",
+        "risk_tolerance": 5.5,
+        "brand_loyalty": 7.3,
+        "shopping_frequency": "regular",
+        "decision_making_style": "balanced"
+      },
+      "psychographic_profile": {
+        "values": ["family", "education", "community"],
+        "lifestyle": "family_oriented",
+        "interests": ["education", "family_activities", "local_events", "health"],
+        "media_consumption": ["family_programming", "educational_content", "local_news", "parenting_blogs"]
+      },
+      "market_receptivity": {
+        "product_categories": ["educational_tools", "family_services", "health_products"],
+        "preferred_channels": ["school_communities", "family_networks", "local_businesses"],
+        "price_sensitivity": "medium",
+        "brand_preferences": ["family_friendly", "educational", "reliable"]
+      }
+    }
+  ],
+  "metadata": {
+    "generation_timestamp": "2024-12-01T14:00:00Z",
+    "synthesis_method": "multi_stage_pipeline",
+    "data_sources_used": ["pew_research", "claritas_prizm", "federal_reserve"],
+    "quality_score": 0.89,
+    "diversity_score": 0.94,
+    "bias_detected": false,
+    "confidence_intervals": {
+      "overall_confidence_score": 0.91,
+      "attribute_intervals": {
+        "age": {
+          "mean": 41.0,
+          "lower_bound": 22.0,
+          "upper_bound": 65.0,
+          "margin_of_error": 2.1,
+          "standard_error": 1.8
+        },
+        "income": {
+          "mean": 107000,
+          "lower_bound": 45000,
+          "upper_bound": 250000,
+          "margin_of_error": 8500,
+          "standard_error": 7200
+        }
+      }
+    },
+    "bias_analysis": {
+      "bias_detected": false,
+      "bias_factors": [],
+      "diversity_score": 0.94,
+      "demographic_balance": {
+        "age_distribution": {
+          "18-24": 0.2,
+          "25-34": 0.2,
+          "35-44": 0.2,
+          "45-54": 0.2,
+          "55+": 0.2
+        },
+        "gender_distribution": {
+          "female": 0.6,
+          "male": 0.2,
+          "non_binary": 0.2
+        },
+        "geographic_distribution": {
+          "urban": 0.4,
+          "suburban": 0.6,
+          "rural": 0.0
+        }
+      }
+    }
+  },
+  "provenance": {
+    "adapter_version": "1.0.0",
+    "pipeline_stages": ["demographic_foundation", "psychographic_enrichment", "behavioral_patterning", "validation_and_calibration"],
+    "validation_checks": ["demographic_completeness", "psychographic_validity", "behavioral_consistency", "diversity_enforcement"],
+    "data_freshness_score": 0.87,
+    "synthesis_parameters": {
+      "target_persona_count": 5,
+      "market_segment": "diverse_us_population",
+      "confidence_level": 0.95,
+      "diversity_constraints": {
+        "age_spread_requirement": 20,
+        "gender_diversity_minimum": 3,
+        "geographic_coverage": ["urban", "suburban"]
+      }
+    }
+  }
+}

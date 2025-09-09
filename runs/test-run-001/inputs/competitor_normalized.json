@@ -1,0 +1,67 @@
+{
+  "run_id": "RUN-20241201-120000-a1b2c3d4",
+  "input_type": "competitor_data",
+  "collection_timestamp": "2024-12-01T12:00:00Z",
+  "normalization_timestamp": "2024-12-01T12:05:00Z",
+  "adapter_version": "1.0.0",
+  "python_version": "3.12.10",
+  "data_zone": "AMBER",
+  "retention_days": 90,
+  "competitor_urls": [
+    "https://techcorp.com",
+    "https://dataflow.com"
+  ],
+  "data_types": ["company_info", "product_offerings", "leadership"],
+  "industry_context": "technology",
+  "companies": [
+    {
+      "company_name": "TechCorp",
+      "description": "Leading provider of enterprise AI solutions and cloud computing services.",
+      "industry": "Technology",
+      "location": "San Francisco, CA",
+      "company_size": "Large",
+      "funding_stage": "Public",
+      "last_updated": "2024-12-01T12:00:00Z",
+      "data_source": "company_websites",
+      "confidence_score": 0.95
+    },
+    {
+      "company_name": "DataFlow Inc",
+      "description": "Specialized in big data processing and real-time analytics platforms.",
+      "industry": "Technology",
+      "location": "Austin, TX",
+      "company_size": "Mid-size",
+      "funding_stage": "Series C",
+      "last_updated": "2024-12-01T12:00:00Z",
+      "data_source": "company_websites",
+      "confidence_score": 0.90
+    }
+  ],
+  "market_overview": {
+    "industry": "technology",
+    "total_companies": 2,
+    "primary_industry": "Technology",
+    "average_company_size": "Large",
+    "data_freshness": "current",
+    "geographic_distribution": "North America focus"
+  },
+  "competitive_landscape": {
+    "total_competitors_analyzed": 2,
+    "data_sources_used": ["company_websites", "press_releases", "industry_directories", "news_articles"],
+    "analysis_timestamp": "2024-12-01T12:05:00Z",
+    "confidence_level": "high"
+  },
+  "sanitization_metadata": {
+    "redactions_applied": 2,
+    "redaction_details": [
+      "personal_background: sensitive details removed",
+      "contact_info: removed from leadership data"
+    ],
+    "sanitization_timestamp": "2024-12-01T12:00:00Z",
+    "sanitization_level": "medium",
+    "pii_detection_performed": true,
+    "data_classification": "public_company_info"
+  },
+  "data_quality_score": 0.92,
+  "provenance_hash": "c3d4e5f6789012345678901234567890123456789012345678901234567890"
+}

@@ -1,0 +1,105 @@
+{
+  "simulation_metadata": {
+    "simulation_id": "phase7_simulation_20250909_195720",
+    "timestamp": "2025-09-09T19:57:20.370642Z",
+    "phase": "PHASE-7",
+    "iterations": 1000,
+    "python_version": "3.12.10",
+    "python_env_hash": "cbb28e9f4e64c43573197596b404614ee2437d83bdca39e087026dcb57e673a3",
+    "content_hash": "a29c8deaffd9892841883c8d68c9f5c522a6a00c3f2731df2f850e10a3bbe1a8",
+    "composite_hash": "f7c1ee13d331e70dac6d5facfe084216e3dd0bfd21ca18233b43e571398774a8",
+    "data_zone": "GREEN",
+    "retention_days": 90
+  },
+  "simulation_config": {
+    "models_used": [
+      "consumer_bounded_rationality",
+      "channel_dynamics",
+      "competitor_reactions",
+      "social_proof"
+    ],
+    "scenario": "integrated_market_simulation",
+    "time_periods": 12,
+    "random_seed_base": 1000,
+    "realism_bounds_enforced": true,
+    "determinism_required": true
+  },
+  "iteration_results": {
+    "iteration": 900,
+    "seed": 1900,
+    "timestamp": "2025-09-09T19:57:20.518183Z",
+    "consumer_decision": {
+      "persona_id": "SIM_CONSUMER_0900",
+      "decision": "no_action",
+      "confidence": 0.0,
+      "cognitive_load": 0.0
+    },
+    "channel_performance": {
+      "total_traffic": 81567.57008014726,
+      "total_conversions": 1885.73976712702,
+      "total_cost": 64147.35108232705,
+      "total_virality_events": 2,
+      "average_cpa": 34.01707499654495,
+      "overall_conversion_rate": 0.023118743947798323,
+      "channel_contributions": {
+        "seo": {
+          "conversions": 234.47820424254112,
+          "percentage": 12.434282202139459
+        },
+        "social": {
+          "conversions": 647.9265655519594,
+          "percentage": 34.35927782013605
+        },
+        "email": {
+          "conversions": 717.0965278520605,
+          "percentage": 38.027332315560066
+        },
+        "direct": {
+          "conversions": 286.23846948045923,
+          "percentage": 15.179107662164432
+        }
+      },
+      "efficiency_score": 29.397001361862188,
+      "virality_score": 0.4
+    },
+    "competitor_reactions": 0,
+    "social_influence": {
+      "virality_coefficient": 1.0,
+      "adoption_velocity": 0.0,
+      "peak_adoption_period": 1,
+      "adoption_s_curve_fit": 0.0,
+      "network_effects_strength": 0.0
+    },
+    "performance_metrics": {
+      "execution_time_ms": 179.98978582133898,
+      "memory_usage_mb": 62.97769020959534
+    }
+  },
+  "aggregate_results": {
+    "total_decisions": 1000,
+    "purchase_decisions": 473,
+    "total_conversions": 175240.97012651476,
+    "total_cost": 5880186.879890793,
+    "total_virality_events": 20.0,
+    "total_reactions": 0,
+    "average_confidence": 0.24380068672329963,
+    "average_cpa": 33.554863772128215,
+    "purchase_rate": 0.473
+  },
+  "performance_metrics": {
+    "total_execution_time_seconds": 126.86715696022523,
+    "average_execution_time_ms": 126.86715696022523,
+    "average_memory_usage_mb": 50.03111266403583,
+    "iterations_per_second": 7.8822606572126075,
+    "determinism_score": 0.98,
+    "memory_efficiency_score": 0.85
+  },
+  "validation_results": {
+    "determinism_test_passed": true,
+    "schema_conformance_score": 0.96,
+    "realism_bounds_compliance": 0.94,
+    "performance_requirements_met": true,
+    "error_rate": 0.02,
+    "data_quality_score": 0.92
+  }
+}

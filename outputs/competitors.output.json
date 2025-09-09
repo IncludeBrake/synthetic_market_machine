@@ -1,0 +1,358 @@
+{
+  "run_id": "RUN-20241201-140000-a1b2c3d4",
+  "span_id": "competitor-analysis-span-001",
+  "timestamp": "2024-12-01T14:00:00Z",
+  "python_version": "3.12.10",
+  "python_env_hash": "a1b2c3d4e5f6789012345678901234567890123456789012345678901234567890",
+  "content_hash": "d4e5f6789012345678901234567890123456789012345678901234567890abcd",
+  "composite_hash": "e5f6789012345678901234567890123456789012345678901234567890abcdef",
+  "data_zone": "GREEN",
+  "retention_days": 90,
+  "competitors": [
+    {
+      "company_name": "TechCorp Enterprise",
+      "market_position": "leader",
+      "feature_scores": {
+        "technology_platform": 0.92,
+        "user_experience": 0.85,
+        "data_analytics": 0.88,
+        "business_features": 0.90,
+        "support_ecosystem": 0.87
+      },
+      "positioning_scores": {
+        "feature_completeness": 0.91,
+        "ease_of_use": 0.82,
+        "scalability": 0.95,
+        "innovation": 0.88
+      },
+      "competitive_advantages": [
+        "Superior scalability and performance",
+        "Comprehensive feature set covering enterprise needs",
+        "Strong ecosystem with extensive integrations",
+        "Established track record with Fortune 500 companies"
+      ],
+      "competitive_disadvantages": [
+        "Higher learning curve for new users",
+        "Premium pricing model may limit SMB adoption",
+        "Complex deployment process requiring IT resources"
+      ],
+      "market_share_estimate": 0.25,
+      "growth_trajectory": "strong_growth",
+      "uncertainty_bands": {
+        "market_share_range": {
+          "lower_bound": 0.22,
+          "upper_bound": 0.28,
+          "confidence_level": 0.90
+        },
+        "feature_score_uncertainty": {
+          "technology_platform": 0.03,
+          "user_experience": 0.04,
+          "data_analytics": 0.03,
+          "business_features": 0.02,
+          "support_ecosystem": 0.03
+        }
+      }
+    },
+    {
+      "company_name": "CloudFlow Solutions",
+      "market_position": "challenger",
+      "feature_scores": {
+        "technology_platform": 0.78,
+        "user_experience": 0.92,
+        "data_analytics": 0.75,
+        "business_features": 0.82,
+        "support_ecosystem": 0.80
+      },
+      "positioning_scores": {
+        "feature_completeness": 0.81,
+        "ease_of_use": 0.89,
+        "scalability": 0.76,
+        "innovation": 0.85
+      },
+      "competitive_advantages": [
+        "Superior user experience and intuitive interface",
+        "Faster implementation and time-to-value",
+        "Competitive pricing attractive to cost-conscious buyers",
+        "Strong focus on customer success and onboarding"
+      ],
+      "competitive_disadvantages": [
+        "Limited advanced features for complex enterprise needs",
+        "Smaller ecosystem compared to established players",
+        "Newer company with shorter track record",
+        "Potential scalability concerns at enterprise scale"
+      ],
+      "market_share_estimate": 0.15,
+      "growth_trajectory": "rapid_growth",
+      "uncertainty_bands": {
+        "market_share_range": {
+          "lower_bound": 0.12,
+          "upper_bound": 0.18,
+          "confidence_level": 0.85
+        },
+        "feature_score_uncertainty": {
+          "technology_platform": 0.05,
+          "user_experience": 0.02,
+          "data_analytics": 0.04,
+          "business_features": 0.03,
+          "support_ecosystem": 0.04
+        }
+      }
+    },
+    {
+      "company_name": "LegacySoft Systems",
+      "market_position": "follower",
+      "feature_scores": {
+        "technology_platform": 0.65,
+        "user_experience": 0.68,
+        "data_analytics": 0.62,
+        "business_features": 0.70,
+        "support_ecosystem": 0.75
+      },
+      "positioning_scores": {
+        "feature_completeness": 0.67,
+        "ease_of_use": 0.71,
+        "scalability": 0.63,
+        "innovation": 0.58
+      },
+      "competitive_advantages": [
+        "Established customer base with long-term relationships",
+        "Reliable support infrastructure and documentation",
+        "Proven stability and uptime track record",
+        "Lower cost of ownership for existing deployments"
+      ],
+      "competitive_disadvantages": [
+        "Outdated technology stack limiting innovation",
+        "Limited scalability for modern cloud workloads",
+        "Higher maintenance costs and technical debt",
+        "Smaller development team and slower feature releases"
+      ],
+      "market_share_estimate": 0.35,
+      "growth_trajectory": "stable",
+      "uncertainty_bands": {
+        "market_share_range": {
+          "lower_bound": 0.32,
+          "upper_bound": 0.38,
+          "confidence_level": 0.92
+        },
+        "feature_score_uncertainty": {
+          "technology_platform": 0.04,
+          "user_experience": 0.05,
+          "data_analytics": 0.06,
+          "business_features": 0.04,
+          "support_ecosystem": 0.03
+        }
+      }
+    },
+    {
+      "company_name": "InnovateNow",
+      "market_position": "niche_player",
+      "feature_scores": {
+        "technology_platform": 0.72,
+        "user_experience": 0.88,
+        "data_analytics": 0.85,
+        "business_features": 0.68,
+        "support_ecosystem": 0.65
+      },
+      "positioning_scores": {
+        "feature_completeness": 0.74,
+        "ease_of_use": 0.86,
+        "scalability": 0.69,
+        "innovation": 0.91
+      },
+      "competitive_advantages": [
+        "Cutting-edge features using latest technologies",
+        "Specialized focus on emerging use cases",
+        "Agile development and rapid feature releases",
+        "Strong alignment with industry trends"
+      ],
+      "competitive_disadvantages": [
+        "Limited market presence and brand recognition",
+        "Smaller customer base with less validation",
+        "Potential stability concerns as newer platform",
+        "Higher risk perception from enterprise buyers"
+      ],
+      "market_share_estimate": 0.08,
+      "growth_trajectory": "rapid_growth",
+      "uncertainty_bands": {
+        "market_share_range": {
+          "lower_bound": 0.05,
+          "upper_bound": 0.12,
+          "confidence_level": 0.75
+        },
+        "feature_score_uncertainty": {
+          "technology_platform": 0.06,
+          "user_experience": 0.03,
+          "data_analytics": 0.04,
+          "business_features": 0.07,
+          "support_ecosystem": 0.08
+        }
+      }
+    },
+    {
+      "company_name": "BudgetTech Solutions",
+      "market_position": "niche_player",
+      "feature_scores": {
+        "technology_platform": 0.55,
+        "user_experience": 0.78,
+        "data_analytics": 0.48,
+        "business_features": 0.62,
+        "support_ecosystem": 0.58
+      },
+      "positioning_scores": {
+        "feature_completeness": 0.58,
+        "ease_of_use": 0.76,
+        "scalability": 0.52,
+        "innovation": 0.45
+      },
+      "competitive_advantages": [
+        "Highly competitive pricing for budget-conscious buyers",
+        "Simplified feature set focused on core functionality",
+        "Easy deployment and minimal IT requirements",
+        "Strong value proposition for small organizations"
+      ],
+      "competitive_disadvantages": [
+        "Limited advanced features and customization options",
+        "Basic support model with longer response times",
+        "Potential scalability limitations for growing companies",
+        "Lower brand prestige and perceived quality"
+      ],
+      "market_share_estimate": 0.17,
+      "growth_trajectory": "moderate_growth",
+      "uncertainty_bands": {
+        "market_share_range": {
+          "lower_bound": 0.14,
+          "upper_bound": 0.20,
+          "confidence_level": 0.80
+        },
+        "feature_score_uncertainty": {
+          "technology_platform": 0.08,
+          "user_experience": 0.05,
+          "data_analytics": 0.09,
+          "business_features": 0.06,
+          "support_ecosystem": 0.07
+        }
+      }
+    }
+  ],
+  "market_analysis": {
+    "total_market_size": 15000000000,
+    "growth_rate": 0.18,
+    "concentration_ratio": 0.75,
+    "barriers_to_entry": "high",
+    "innovation_pace": "rapid",
+    "market_maturity": "growth_stage",
+    "key_drivers": [
+      "Digital transformation initiatives",
+      "Cloud migration trends",
+      "Data-driven decision making",
+      "Remote work requirements",
+      "Cost optimization pressures"
+    ],
+    "market_uncertainty": {
+      "size_estimate_range": {
+        "lower_bound": 14000000000,
+        "upper_bound": 16500000000,
+        "confidence_level": 0.85
+      },
+      "growth_rate_range": {
+        "lower_bound": 0.15,
+        "upper_bound": 0.22,
+        "confidence_level": 0.90
+      }
+    }
+  },
+  "competitive_landscape": {
+    "market_segments": ["enterprise", "mid_market", "small_business", "startup"],
+    "key_success_factors": [
+      "Technology scalability and performance",
+      "User adoption and ease of use",
+      "Total cost of ownership and ROI",
+      "Vendor stability and support quality",
+      "Integration capabilities and ecosystem strength"
+    ],
+    "emerging_trends": [
+      "AI/ML integration and automation",
+      "Zero-trust security models",
+      "Composable and modular architectures",
+      "Sustainability and ESG considerations",
+      "Edge computing and distributed architectures"
+    ],
+    "disruptive_threats": [
+      "Open-source alternatives gaining traction",
+      "Platform consolidation reducing choice",
+      "New market entrants with innovative approaches",
+      "Economic uncertainty affecting enterprise spending",
+      "Regulatory changes impacting technology adoption"
+    ],
+    "competitive_dynamics": {
+      "rivalry_intensity": "high",
+      "buyer_power": "medium",
+      "supplier_power": "medium",
+      "threat_of_substitutes": "high",
+      "threat_of_new_entrants": "medium"
+    }
+  },
+  "metadata": {
+    "analysis_timestamp": "2024-12-01T14:00:00Z",
+    "analysis_method": "multi_dimensional_positioning",
+    "data_sources_used": ["crunchbase", "press_releases", "industry_reports", "customer_reviews"],
+    "quality_score": 0.89,
+    "confidence_level": 0.92,
+    "analysis_depth": "comprehensive",
+    "positioning_uncertainty": {
+      "quadrant_membership_probability": {
+        "leaders": {
+          "techcorp_enterprise": 0.95,
+          "cloudflow_solutions": 0.15
+        },
+        "challengers": {
+          "cloudflow_solutions": 0.80,
+          "innovatenow": 0.35
+        },
+        "followers": {
+          "legacysys_systems": 0.88,
+          "budgettech_solutions": 0.25
+        },
+        "niche_players": {
+          "innovatenow": 0.65,
+          "budgettech_solutions": 0.75
+        }
+      }
+    },
+    "bias_analysis": {
+      "methodology_bias": "low",
+      "data_source_bias": "medium",
+      "temporal_bias": "low",
+      "geographic_bias": "medium",
+      "mitigation_applied": [
+        "multi_source_data_integration",
+        "temporal_data_normalization",
+        "geographic_weighting_adjustment"
+      ]
+    }
+  },
+  "provenance": {
+    "adapter_version": "1.0.0",
+    "feature_taxonomy_version": "1.0.0",
+    "data_freshness_score": 0.87,
+    "validation_checks": ["feature_completeness", "positioning_consistency", "market_data_accuracy", "uncertainty_quantification"],
+    "analysis_parameters": {
+      "competitor_count": 5,
+      "market_segment": "enterprise_software",
+      "positioning_axes": ["feature_completeness", "ease_of_use", "scalability", "innovation"],
+      "confidence_level": 0.95,
+      "uncertainty_bands": true
+    },
+    "data_lineage": {
+      "primary_sources": ["crunchbase", "press_releases"],
+      "secondary_sources": ["industry_reports", "customer_reviews"],
+      "data_processing_pipeline": [
+        "source_data_collection",
+        "feature_score_calculation",
+        "positioning_analysis",
+        "uncertainty_estimation",
+        "bias_detection_and_correction"
+      ]
+    }
+  }
+}

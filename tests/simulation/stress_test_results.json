@@ -1,0 +1,44 @@
+{
+  "test_timestamp": "2025-09-09T19:58:57.934317Z",
+  "stress_tests_run": 13,
+  "stress_tests_passed": 8,
+  "stress_tests_failed": 5,
+  "performance_metrics": {
+    "large_population_test_time": 0.09512734413146973,
+    "overall_stress_score": 0.6153846153846154
+  },
+  "edge_case_coverage": {
+    "boundary_conditions_tested": 4,
+    "extreme_values_tested": 1,
+    "error_conditions_tested": 1,
+    "performance_limits_tested": 1,
+    "concurrent_operations_tested": 1
+  },
+  "failure_details": [
+    {
+      "test_name": "zero_attention_span",
+      "reason": "'information_search'",
+      "timestamp": "2025-09-09T19:58:57.936120Z"
+    },
+    {
+      "test_name": "maximum_attention_span",
+      "reason": "'information_search'",
+      "timestamp": "2025-09-09T19:58:57.936120Z"
+    },
+    {
+      "test_name": "extreme_risk_tolerance",
+      "reason": "'evaluation_of_alternatives'",
+      "timestamp": "2025-09-09T19:58:57.936120Z"
+    },
+    {
+      "test_name": "zero_investment",
+      "reason": "",
+      "timestamp": "2025-09-09T19:58:57.937628Z"
+    },
+    {
+      "test_name": "extreme_resources",
+      "reason": "",
+      "timestamp": "2025-09-09T19:58:58.367869Z"
+    }
+  ]
+}

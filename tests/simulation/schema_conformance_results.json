@@ -1,0 +1,16 @@
+{
+  "test_timestamp": "2025-09-09T19:58:52.394311Z",
+  "schema_tests_run": 6,
+  "schema_tests_passed": 6,
+  "schema_tests_failed": 0,
+  "conformance_score": 1.0,
+  "validation_errors": [],
+  "schema_coverage": {
+    "consumer_model_schemas": 1,
+    "channel_model_schemas": 1,
+    "competitor_model_schemas": 1,
+    "social_proof_schemas": 1,
+    "total_schemas_defined": 4,
+    "schema_test_coverage": 6
+  }
+}

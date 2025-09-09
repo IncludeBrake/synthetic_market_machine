@@ -1,0 +1,20 @@
+{
+  "test_timestamp": "2025-09-09T19:58:20.314719Z",
+  "tests_run": 5,
+  "tests_passed": 4,
+  "tests_failed": 1,
+  "determinism_score": 0.8,
+  "performance_metrics": {
+    "pass_rate": 0.8,
+    "failure_rate": 0.2,
+    "total_tests": 5,
+    "test_duration_seconds": 0.0
+  },
+  "failure_details": [
+    {
+      "test_name": "integrated_simulation",
+      "reason": "Non-deterministic result in run 1 for key path 'final_state'",
+      "timestamp": "2025-09-09T19:58:20.329771Z"
+    }
+  ]
+}

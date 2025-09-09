@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Persona Golden Fixtures",
+  "description": "Golden standard test fixtures for persona generation validation",
+  "type": "object",
+  "properties": {
+    "fixture_id": {
+      "type": "string",
+      "description": "Unique fixture identifier"
+    },
+    "fixture_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Semantic version of the fixture"
+    },
+    "test_scenarios": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/test_scenario"
+      },
+      "description": "Collection of test scenarios"
+    }
+  },
+  "required": ["fixture_id", "fixture_version", "test_scenarios"],
+  "definitions": {
+    "test_scenario": {
+      "type": "object",
+      "properties": {
+        "scenario_id": {
+          "type": "string",
+          "description": "Unique scenario identifier"
+        },
+        "scenario_name": {
+          "type": "string",
+          "description": "Human-readable scenario name"
+        },
+        "input_parameters": {
+          "type": "object",
+          "description": "Parameters used to generate the personas"
+        },
+        "expected_output": {
+          "type": "object",
+          "description": "Expected persona generation output"
+        },
+        "validation_criteria": {
+          "type": "object",
+          "description": "Criteria for validating the output"
+        }
+      },
+      "required": ["scenario_id", "scenario_name", "input_parameters", "expected_output", "validation_criteria"]
+    }
+  }
+}

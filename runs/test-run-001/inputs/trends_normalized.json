@@ -1,0 +1,74 @@
+{
+  "run_id": "RUN-20241201-120000-a1b2c3d4",
+  "input_type": "trends_data",
+  "collection_timestamp": "2024-12-01T12:00:00Z",
+  "normalization_timestamp": "2024-12-01T12:05:00Z",
+  "adapter_version": "1.0.0",
+  "python_version": "3.12.10",
+  "data_zone": "AMBER",
+  "retention_days": 90,
+  "keywords": ["artificial intelligence", "machine learning"],
+  "timeframe": "7d",
+  "geography": "global",
+  "trend_series": [
+    {
+      "keyword": "artificial_intelligence",
+      "source": "google_trends",
+      "data_points": [
+        {"date": "2024-11-25", "value": 85},
+        {"date": "2024-11-26", "value": 87},
+        {"date": "2024-11-27", "value": 82},
+        {"date": "2024-11-28", "value": 89},
+        {"date": "2024-11-29", "value": 91},
+        {"date": "2024-11-30", "value": 88},
+        {"date": "2024-12-01", "value": 93}
+      ],
+      "normalized_values": [0.85, 0.87, 0.82, 0.89, 0.91, 0.88, 0.93]
+    },
+    {
+      "keyword": "machine_learning",
+      "source": "google_trends",
+      "data_points": [
+        {"date": "2024-11-25", "value": 72},
+        {"date": "2024-11-26", "value": 75},
+        {"date": "2024-11-27", "value": 71},
+        {"date": "2024-11-28", "value": 78},
+        {"date": "2024-11-29", "value": 82},
+        {"date": "2024-11-30", "value": 79},
+        {"date": "2024-12-01", "value": 85}
+      ],
+      "normalized_values": [0.72, 0.75, 0.71, 0.78, 0.82, 0.79, 0.85]
+    }
+  ],
+  "keyword_summary": {
+    "artificial_intelligence": {
+      "sentiment_score": 0.73,
+      "engagement_rate": 0.0125,
+      "mention_volume": 15670
+    },
+    "machine_learning": {
+      "sentiment_score": 0.68,
+      "engagement_rate": 0.0099,
+      "mention_volume": 12340
+    }
+  },
+  "market_context": {
+    "market_size_usd": 285000000000,
+    "annual_growth_rate": 0.28,
+    "key_drivers": [
+      "AI market expected to reach $285B by 2025",
+      "Machine learning adoption accelerating across industries",
+      "Talent shortage remains primary barrier to growth",
+      "Open source frameworks driving innovation"
+    ]
+  },
+  "sanitization_metadata": {
+    "redactions_applied": 0,
+    "sanitization_timestamp": "2024-12-01T12:00:00Z",
+    "sanitization_level": "high",
+    "pii_detection_performed": true,
+    "data_classification": "public_market_data"
+  },
+  "data_quality_score": 0.89,
+  "provenance_hash": "a1b2c3d4e5f6789012345678901234567890123456789012345678901234567890"
+}

@@ -1,0 +1,293 @@
+{
+  "simulation_test_fixtures": {
+    "metadata": {
+      "version": "1.0.0",
+      "created": "2024-12-01T12:00:00Z",
+      "description": "Golden fixtures for SMVM simulation testing",
+      "python_version": "3.12.10"
+    },
+    "consumer_model_fixtures": {
+      "standard_consumer": {
+        "persona_id": "GOLDEN_CONSUMER_001",
+        "demographics": {
+          "age": 35,
+          "gender": "female",
+          "location": "urban"
+        },
+        "behavioral_attributes": {
+          "risk_tolerance": 6.5,
+          "brand_loyalty": 7.2,
+          "price_sensitivity": "medium",
+          "decision_speed": "moderate"
+        },
+        "market_receptivity": {
+          "decision_style": "balanced",
+          "preferred_channels": ["online", "social"],
+          "information_sources": ["reviews", "recommendations"]
+        },
+        "psychographic_profile": {
+          "lifestyle": "modern_professional",
+          "values": ["quality", "convenience", "innovation"],
+          "personality_traits": ["openness", "conscientiousness"]
+        }
+      },
+      "risk_averse_consumer": {
+        "persona_id": "GOLDEN_CONSUMER_002",
+        "demographics": {
+          "age": 55,
+          "gender": "male",
+          "location": "suburban"
+        },
+        "behavioral_attributes": {
+          "risk_tolerance": 2.5,
+          "brand_loyalty": 9.1,
+          "price_sensitivity": "low",
+          "decision_speed": "slow"
+        },
+        "market_receptivity": {
+          "decision_style": "conservative",
+          "preferred_channels": ["traditional", "word_of_mouth"],
+          "information_sources": ["trusted_brands", "personal_network"]
+        }
+      }
+    },
+    "channel_model_fixtures": {
+      "balanced_strategy": {
+        "seo": {
+          "investment": 1.5,
+          "effectiveness": 0.85,
+          "content_quality": 0.8,
+          "target_audience": "broad"
+        },
+        "social": {
+          "investment": 2.0,
+          "effectiveness": 0.9,
+          "content_quality": 0.85,
+          "target_audience": "young_professionals"
+        },
+        "email": {
+          "investment": 1.2,
+          "effectiveness": 0.95,
+          "content_quality": 0.75,
+          "target_audience": "existing_customers"
+        },
+        "direct": {
+          "investment": 1.0,
+          "effectiveness": 0.8,
+          "content_quality": 0.7,
+          "target_audience": "high_value_prospects"
+        }
+      },
+      "aggressive_digital_strategy": {
+        "seo": {
+          "investment": 2.5,
+          "effectiveness": 0.9,
+          "content_quality": 0.9,
+          "target_audience": "search_intensive"
+        },
+        "social": {
+          "investment": 3.0,
+          "effectiveness": 0.95,
+          "content_quality": 0.9,
+          "target_audience": "socially_active"
+        },
+        "email": {
+          "investment": 0.5,
+          "effectiveness": 0.7,
+          "content_quality": 0.6,
+          "target_audience": "email_subscribers"
+        },
+        "direct": {
+          "investment": 0.8,
+          "effectiveness": 0.75,
+          "content_quality": 0.65,
+          "target_audience": "direct_response"
+        }
+      }
+    },
+    "competitor_model_fixtures": {
+      "market_leader": {
+        "name": "TechCorp",
+        "market_position": "leader",
+        "strategy": {
+          "pricing_strategy": "premium",
+          "innovation_focus": true,
+          "customer_service": "high_touch"
+        },
+        "intelligence_level": "high",
+        "resources": 200,
+        "market_share": 0.35,
+        "competitive_advantages": ["brand_strength", "innovation_pipeline"]
+      },
+      "aggressive_challenger": {
+        "name": "BudgetSoft",
+        "market_position": "challenger",
+        "strategy": {
+          "pricing_strategy": "aggressive",
+          "innovation_focus": false,
+          "customer_service": "self_service"
+        },
+        "intelligence_level": "medium",
+        "resources": 100,
+        "market_share": 0.15,
+        "competitive_advantages": ["cost_efficiency", "agile_development"]
+      }
+    },
+    "social_proof_fixtures": {
+      "small_world_network": {
+        "network_structure": "small_world",
+        "initial_adopters": ["0", "1", "2"],
+        "total_population": 100,
+        "expected_adoption_rate": 0.65,
+        "virality_coefficient": 1.8,
+        "network_characteristics": {
+          "clustering_coefficient": 0.6,
+          "average_path_length": 6,
+          "degree_distribution": "power_law"
+        }
+      },
+      "scale_free_network": {
+        "network_structure": "scale_free",
+        "initial_adopters": ["0", "5", "10"],
+        "total_population": 200,
+        "expected_adoption_rate": 0.75,
+        "virality_coefficient": 2.2,
+        "network_characteristics": {
+          "clustering_coefficient": 0.3,
+          "average_path_length": 4,
+          "degree_distribution": "power_law"
+        }
+      }
+    },
+    "market_context_fixtures": {
+      "growth_market": {
+        "economic_conditions": 0.85,
+        "competition_intensity": 0.6,
+        "seasonal_effects": 0.3,
+        "technological_trends": 0.9,
+        "consumer_confidence": 0.8,
+        "market_maturity": 0.7
+      },
+      "mature_market": {
+        "economic_conditions": 0.6,
+        "competition_intensity": 0.8,
+        "seasonal_effects": 0.5,
+        "technological_trends": 0.5,
+        "consumer_confidence": 0.6,
+        "market_maturity": 0.9
+      },
+      "disruptive_market": {
+        "economic_conditions": 0.9,
+        "competition_intensity": 0.4,
+        "seasonal_effects": 0.2,
+        "technological_trends": 0.95,
+        "consumer_confidence": 0.9,
+        "market_maturity": 0.3
+      }
+    },
+    "product_option_fixtures": {
+      "standard_product_line": [
+        {
+          "product_id": "STD_001",
+          "product_name": "Basic Package",
+          "price": 49.99,
+          "quality_score": 0.6,
+          "feature_score": 0.5,
+          "brand_strength": 0.7,
+          "social_proof": 0.6,
+          "target_segment": "price_sensitive"
+        },
+        {
+          "product_id": "STD_002",
+          "product_name": "Professional Package",
+          "price": 99.99,
+          "quality_score": 0.8,
+          "feature_score": 0.8,
+          "brand_strength": 0.8,
+          "social_proof": 0.7,
+          "target_segment": "value_driven"
+        },
+        {
+          "product_id": "STD_003",
+          "product_name": "Enterprise Package",
+          "price": 199.99,
+          "quality_score": 0.9,
+          "feature_score": 0.9,
+          "brand_strength": 0.9,
+          "social_proof": 0.8,
+          "target_segment": "premium_buyers"
+        }
+      ],
+      "disruptive_innovation": [
+        {
+          "product_id": "DIS_001",
+          "product_name": "AI-Powered Basic",
+          "price": 39.99,
+          "quality_score": 0.8,
+          "feature_score": 0.9,
+          "brand_strength": 0.5,
+          "social_proof": 0.4,
+          "target_segment": "early_adopters",
+          "innovation_factor": 0.9
+        },
+        {
+          "product_id": "DIS_002",
+          "product_name": "Smart Professional",
+          "price": 79.99,
+          "quality_score": 0.85,
+          "feature_score": 0.95,
+          "brand_strength": 0.6,
+          "social_proof": 0.5,
+          "target_segment": "innovators",
+          "innovation_factor": 0.95
+        }
+      ]
+    },
+    "determinism_test_cases": {
+      "seed_42_consumer_test": {
+        "seed": 42,
+        "expected_decision": "purchase",
+        "expected_confidence": 0.75,
+        "expected_cognitive_load": 0.65
+      },
+      "seed_123_channel_test": {
+        "seed": 123,
+        "expected_total_conversions": 1250,
+        "expected_average_cpa": 85.50,
+        "expected_virality_score": 0.45
+      },
+      "seed_456_competitor_test": {
+        "seed": 456,
+        "expected_reactions": 3,
+        "expected_success_rate": 0.67,
+        "expected_resource_impact": 0.25
+      }
+    },
+    "performance_benchmarks": {
+      "consumer_model": {
+        "max_execution_time_seconds": 2.0,
+        "max_memory_mb": 50,
+        "min_determinism_score": 0.95,
+        "max_error_rate": 0.05
+      },
+      "channel_model": {
+        "max_execution_time_seconds": 5.0,
+        "max_memory_mb": 100,
+        "min_determinism_score": 0.95,
+        "max_error_rate": 0.05
+      },
+      "competitor_model": {
+        "max_execution_time_seconds": 3.0,
+        "max_memory_mb": 75,
+        "min_determinism_score": 0.95,
+        "max_error_rate": 0.05
+      },
+      "social_proof_model": {
+        "max_execution_time_seconds": 4.0,
+        "max_memory_mb": 80,
+        "min_determinism_score": 0.95,
+        "max_error_rate": 0.05
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "fixture_id": "forums_fixture_001",
+  "collection_timestamp": "2024-12-01T11:00:00Z",
+  "source_data": {
+    "posts": [
+      {
+        "id": "reddit_001",
+        "platform": "reddit",
+        "topic": "artificial intelligence",
+        "title": "AI is revolutionizing healthcare diagnostics",
+        "content": "I've been researching how artificial intelligence is transforming medical diagnostics. The accuracy improvements are remarkable, with some studies showing AI can detect conditions 30% earlier than traditional methods. What are your thoughts on the practical implementation challenges?",
+        "author": "healthtech_researcher",
+        "timestamp": "2024-12-01T08:30:00Z",
+        "upvotes": 234,
+        "comments": 67,
+        "subreddit": "r/artificial",
+        "url": "https://reddit.com/r/artificial/ai-healthcare-revolution"
+      },
+      {
+        "id": "reddit_002",
+        "platform": "reddit",
+        "topic": "machine learning",
+        "title": "Practical ML deployment in production",
+        "content": "After months of working on ML models in development, I'm now facing the challenges of deploying them to production. The main issues seem to be around model versioning, monitoring, and performance optimization. Has anyone else dealt with these challenges?",
+        "author": "ml_engineer_pro",
+        "timestamp": "2024-12-01T09:15:00Z",
+        "upvotes": 156,
+        "comments": 43,
+        "subreddit": "r/MachineLearning",
+        "url": "https://reddit.com/r/MachineLearning/ml-production-deployment"
+      }
+    ],
+    "reviews": [
+      {
+        "id": "review_001",
+        "platform": "product_reviews",
+        "topic": "artificial intelligence",
+        "product_name": "AI Diagnostic Assistant Pro",
+        "rating": 4,
+        "title": "Excellent accuracy but steep learning curve",
+        "content": "I've been using this AI diagnostic tool for 3 months now. The accuracy is impressive - it caught a potential issue that I would have missed. However, the interface takes some time to learn effectively. Overall, it's worth the investment for serious practitioners.",
+        "author": "medical_professional",
+        "timestamp": "2024-12-01T07:45:00Z",
+        "verified_purchase": true,
+        "helpful_votes": 23,
+        "sentiment": "positive"
+      },
+      {
+        "id": "review_002",
+        "platform": "product_reviews",
+        "topic": "machine learning",
+        "product_name": "ML Studio Cloud Platform",
+        "rating": 5,
+        "title": "Game-changer for ML workflows",
+        "content": "This platform has completely transformed how we approach machine learning projects. The collaborative features, extensive model library, and deployment tools make it invaluable. The customer support is also excellent when we need help.",
+        "author": "data_scientist_team_lead",
+        "timestamp": "2024-12-01T06:20:00Z",
+        "verified_purchase": true,
+        "helpful_votes": 31,
+        "sentiment": "positive"
+      }
+    ],
+    "discussions": [
+      {
+        "id": "forum_001",
+        "platform": "forum",
+        "topic": "artificial intelligence",
+        "thread_title": "AI Ethics and Bias Discussion",
+        "content": "I'm organizing a discussion group about ethical considerations in AI development. Key topics include algorithmic bias, transparency requirements, and the responsibility of AI developers. What frameworks or guidelines have you found most useful in your work?",
+        "author": "ai_ethics_researcher",
+        "timestamp": "2024-12-01T10:00:00Z",
+        "replies": 15,
+        "views": 342,
+        "forum_section": "AI Ethics & Policy",
+        "tags": ["ethics", "bias", "transparency", "guidelines"],
+        "last_reply": "2024-12-01T10:45:00Z"
+      }
+    ]
+  },
+  "keywords": ["artificial intelligence", "machine learning"],
+  "content_types": ["reviews", "discussions"],
+  "max_posts": 50,
+  "sanitization_metadata": {
+    "redactions_applied": 3,
+    "redaction_details": [
+      "author: anonymized",
+      "url: parameters removed",
+      "email: removed"
+    ],
+    "sanitization_timestamp": "2024-12-01T11:00:00Z",
+    "sanitization_level": "high",
+    "pii_detection_performed": true,
+    "data_classification": "public_forum_data"
+  }
+}

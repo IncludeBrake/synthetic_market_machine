@@ -1,0 +1,375 @@
+{
+  "fixture_id": "competitors_golden_v1.0.0",
+  "fixture_version": "1.0.0",
+  "test_scenarios": [
+    {
+      "scenario_id": "scenario_001",
+      "scenario_name": "Enterprise Cloud Platform Analysis",
+      "input_parameters": {
+        "market_segment": "enterprise_software",
+        "competitor_count": 3,
+        "analysis_depth": "comprehensive",
+        "feature_taxonomy": "enterprise",
+        "positioning_axes": ["feature_completeness", "ease_of_use", "scalability"],
+        "confidence_level": 0.95
+      },
+      "expected_output": {
+        "competitors": [
+          {
+            "company_name": "TechCorp Enterprise",
+            "market_position": "leader",
+            "feature_scores": {
+              "technology_platform": 0.92,
+              "user_experience": 0.85,
+              "data_analytics": 0.88,
+              "business_features": 0.90,
+              "support_ecosystem": 0.87
+            },
+            "positioning_scores": {
+              "feature_completeness": 0.91,
+              "ease_of_use": 0.82,
+              "scalability": 0.95,
+              "innovation": 0.88
+            },
+            "competitive_advantages": [
+              "Superior scalability and performance",
+              "Comprehensive feature set",
+              "Strong enterprise support"
+            ],
+            "competitive_disadvantages": [
+              "Higher learning curve",
+              "Premium pricing model"
+            ],
+            "market_share_estimate": 0.25,
+            "growth_trajectory": "strong_growth"
+          },
+          {
+            "company_name": "CloudFlow Solutions",
+            "market_position": "challenger",
+            "feature_scores": {
+              "technology_platform": 0.78,
+              "user_experience": 0.92,
+              "data_analytics": 0.75,
+              "business_features": 0.82,
+              "support_ecosystem": 0.80
+            },
+            "positioning_scores": {
+              "feature_completeness": 0.81,
+              "ease_of_use": 0.89,
+              "scalability": 0.76,
+              "innovation": 0.85
+            },
+            "competitive_advantages": [
+              "Superior user experience",
+              "Faster implementation",
+              "Competitive pricing"
+            ],
+            "competitive_disadvantages": [
+              "Limited advanced features",
+              "Smaller ecosystem"
+            ],
+            "market_share_estimate": 0.15,
+            "growth_trajectory": "rapid_growth"
+          },
+          {
+            "company_name": "LegacySoft Systems",
+            "market_position": "follower",
+            "feature_scores": {
+              "technology_platform": 0.65,
+              "user_experience": 0.68,
+              "data_analytics": 0.62,
+              "business_features": 0.70,
+              "support_ecosystem": 0.75
+            },
+            "positioning_scores": {
+              "feature_completeness": 0.67,
+              "ease_of_use": 0.71,
+              "scalability": 0.63,
+              "innovation": 0.58
+            },
+            "competitive_advantages": [
+              "Established customer base",
+              "Reliable support infrastructure",
+              "Proven track record"
+            ],
+            "competitive_disadvantages": [
+              "Outdated technology stack",
+              "Limited innovation",
+              "Higher maintenance costs"
+            ],
+            "market_share_estimate": 0.35,
+            "growth_trajectory": "stable"
+          }
+        ],
+        "market_analysis": {
+          "total_market_size": 15000000000,
+          "growth_rate": 0.18,
+          "concentration_ratio": 0.75,
+          "barriers_to_entry": "high",
+          "innovation_pace": "rapid"
+        },
+        "competitive_landscape": {
+          "market_segments": ["enterprise", "mid_market", "small_business"],
+          "key_success_factors": [
+            "Technology scalability",
+            "User adoption ease",
+            "Total cost of ownership",
+            "Vendor stability"
+          ],
+          "emerging_trends": [
+            "AI/ML integration",
+            "Cloud-native architectures",
+            "Zero-trust security",
+            "Composable enterprise"
+          ],
+          "disruptive_threats": [
+            "Open-source alternatives",
+            "Platform consolidation",
+            "New market entrants"
+          ]
+        },
+        "metadata": {
+          "analysis_timestamp": "2024-12-01T13:00:00Z",
+          "analysis_method": "multi_dimensional_positioning",
+          "data_sources_used": ["crunchbase", "press_releases", "industry_reports"],
+          "quality_score": 0.89,
+          "confidence_level": 0.92,
+          "analysis_depth": "comprehensive"
+        },
+        "provenance": {
+          "adapter_version": "1.0.0",
+          "feature_taxonomy_version": "1.0.0",
+          "data_freshness_score": 0.87,
+          "validation_checks": ["feature_completeness", "positioning_consistency", "market_data_accuracy"]
+        }
+      },
+      "validation_criteria": {
+        "feature_completeness": {
+          "required_categories": ["technology_platform", "user_experience", "data_analytics", "business_features", "support_ecosystem"],
+          "score_range": [0.0, 1.0],
+          "tolerance": 0.05
+        },
+        "positioning_consistency": {
+          "required_axes": ["feature_completeness", "ease_of_use", "scalability", "innovation"],
+          "correlation_threshold": 0.75,
+          "internal_consistency_check": true
+        },
+        "market_data_accuracy": {
+          "market_size_validation": true,
+          "share_distribution_check": true,
+          "growth_rate_reasonableness": true
+        },
+        "competitive_analysis_quality": {
+          "advantage_disadvantage_balance": true,
+          "strategic_recommendations": true,
+          "uncertainty_quantification": true
+        },
+        "data_quality_thresholds": {
+          "overall_quality_score": 0.85,
+          "confidence_level": 0.90,
+          "data_completeness": 0.95
+        }
+      }
+    },
+    {
+      "scenario_id": "scenario_002",
+      "scenario_name": "SaaS Startup Competitive Mapping",
+      "input_parameters": {
+        "market_segment": "saas_startup",
+        "competitor_count": 4,
+        "analysis_depth": "focused",
+        "feature_taxonomy": "standard",
+        "positioning_axes": ["feature_completeness", "ease_of_use"],
+        "confidence_level": 0.90
+      },
+      "expected_output": {
+        "competitors": [
+          {
+            "company_name": "InnovateSaaS",
+            "market_position": "challenger",
+            "feature_scores": {
+              "technology_platform": 0.82,
+              "user_experience": 0.91,
+              "data_analytics": 0.78,
+              "business_features": 0.85,
+              "support_ecosystem": 0.72
+            },
+            "positioning_scores": {
+              "feature_completeness": 0.84,
+              "ease_of_use": 0.88,
+              "scalability": 0.76,
+              "innovation": 0.92
+            },
+            "competitive_advantages": [
+              "Modern user interface",
+              "Rapid feature development",
+              "Strong product vision"
+            ],
+            "competitive_disadvantages": [
+              "Limited enterprise features",
+              "Small customer base",
+              "New entrant risk"
+            ],
+            "market_share_estimate": 0.08,
+            "growth_trajectory": "rapid_growth"
+          },
+          {
+            "company_name": "EstablishedSaaS",
+            "market_position": "follower",
+            "feature_scores": {
+              "technology_platform": 0.71,
+              "user_experience": 0.74,
+              "data_analytics": 0.69,
+              "business_features": 0.76,
+              "support_ecosystem": 0.78
+            },
+            "positioning_scores": {
+              "feature_completeness": 0.74,
+              "ease_of_use": 0.76,
+              "scalability": 0.68,
+              "innovation": 0.62
+            },
+            "competitive_advantages": [
+              "Established reputation",
+              "Larger user base",
+              "Stable platform"
+            ],
+            "competitive_disadvantages": [
+              "Legacy technology",
+              "Slower innovation",
+              "Higher pricing"
+            ],
+            "market_share_estimate": 0.22,
+            "growth_trajectory": "moderate_growth"
+          },
+          {
+            "company_name": "BudgetSaaS",
+            "market_position": "niche_player",
+            "feature_scores": {
+              "technology_platform": 0.58,
+              "user_experience": 0.65,
+              "data_analytics": 0.52,
+              "business_features": 0.61,
+              "support_ecosystem": 0.55
+            },
+            "positioning_scores": {
+              "feature_completeness": 0.58,
+              "ease_of_use": 0.67,
+              "scalability": 0.54,
+              "innovation": 0.48
+            },
+            "competitive_advantages": [
+              "Low cost pricing",
+              "Simple feature set",
+              "Easy deployment"
+            ],
+            "competitive_disadvantages": [
+              "Limited functionality",
+              "Basic support",
+              "Scalability concerns"
+            ],
+            "market_share_estimate": 0.12,
+            "growth_trajectory": "slow_growth"
+          },
+          {
+            "company_name": "SpecializedSaaS",
+            "market_position": "niche_player",
+            "feature_scores": {
+              "technology_platform": 0.73,
+              "user_experience": 0.79,
+              "data_analytics": 0.85,
+              "business_features": 0.71,
+              "support_ecosystem": 0.68
+            },
+            "positioning_scores": {
+              "feature_completeness": 0.75,
+              "ease_of_use": 0.78,
+              "scalability": 0.72,
+              "innovation": 0.76
+            },
+            "competitive_advantages": [
+              "Deep domain expertise",
+              "Specialized analytics",
+              "Industry-specific features"
+            ],
+            "competitive_disadvantages": [
+              "Limited market size",
+              "Higher learning curve",
+              "Smaller ecosystem"
+            ],
+            "market_share_estimate": 0.06,
+            "growth_trajectory": "steady_growth"
+          }
+        ],
+        "market_analysis": {
+          "total_market_size": 2500000000,
+          "growth_rate": 0.25,
+          "concentration_ratio": 0.48,
+          "barriers_to_entry": "medium",
+          "innovation_pace": "very_rapid"
+        },
+        "competitive_landscape": {
+          "market_segments": ["early_adopters", "mainstream", "price_sensitive", "specialized"],
+          "key_success_factors": [
+            "Time to value",
+            "Pricing flexibility",
+            "Integration ease",
+            "Vendor agility"
+          ],
+          "emerging_trends": [
+            "No-code platforms",
+            "API-first architectures",
+            "Usage-based pricing",
+            "Vertical specialization"
+          ],
+          "disruptive_threats": [
+            "Large platform expansion",
+            "Open-source competition",
+            "Economic downturns"
+          ]
+        },
+        "metadata": {
+          "analysis_timestamp": "2024-12-01T13:15:00Z",
+          "analysis_method": "focused_competitive_mapping",
+          "data_sources_used": ["angellist", "product_reviews", "industry_reports"],
+          "quality_score": 0.86,
+          "confidence_level": 0.88,
+          "analysis_depth": "focused"
+        },
+        "provenance": {
+          "adapter_version": "1.0.0",
+          "feature_taxonomy_version": "1.0.0",
+          "data_freshness_score": 0.82,
+          "validation_checks": ["feature_completeness", "positioning_consistency", "market_data_accuracy"]
+        }
+      },
+      "validation_criteria": {
+        "feature_completeness": {
+          "required_categories": ["technology_platform", "user_experience", "data_analytics", "business_features", "support_ecosystem"],
+          "score_range": [0.0, 1.0],
+          "tolerance": 0.05
+        },
+        "positioning_consistency": {
+          "required_axes": ["feature_completeness", "ease_of_use"],
+          "correlation_threshold": 0.70,
+          "internal_consistency_check": true
+        },
+        "market_data_accuracy": {
+          "market_size_validation": true,
+          "share_distribution_check": true,
+          "growth_rate_reasonableness": true
+        },
+        "competitive_analysis_quality": {
+          "advantage_disadvantage_balance": true,
+          "strategic_recommendations": true,
+          "uncertainty_quantification": true
+        },
+        "data_quality_thresholds": {
+          "overall_quality_score": 0.80,
+          "confidence_level": 0.85,
+          "data_completeness": 0.90
+        }
+      }
+    }
+  ]
+}

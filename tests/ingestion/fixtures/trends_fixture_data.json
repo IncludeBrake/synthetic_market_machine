@@ -1,0 +1,113 @@
+{
+  "fixture_id": "trends_fixture_001",
+  "collection_timestamp": "2024-12-01T10:30:00Z",
+  "source_data": {
+    "google_trends": {
+      "artificial_intelligence": {
+        "interest_over_time": [
+          {"date": "2024-11-25", "value": 85},
+          {"date": "2024-11-26", "value": 87},
+          {"date": "2024-11-27", "value": 82},
+          {"date": "2024-11-28", "value": 89},
+          {"date": "2024-11-29", "value": 91},
+          {"date": "2024-11-30", "value": 88},
+          {"date": "2024-12-01", "value": 93}
+        ],
+        "related_queries": [
+          "machine learning trends 2024",
+          "AI job market",
+          "artificial intelligence salary",
+          "best AI certifications"
+        ],
+        "source": "google_trends",
+        "data_quality": "high"
+      },
+      "machine_learning": {
+        "interest_over_time": [
+          {"date": "2024-11-25", "value": 72},
+          {"date": "2024-11-26", "value": 75},
+          {"date": "2024-11-27", "value": 71},
+          {"date": "2024-11-28", "value": 78},
+          {"date": "2024-11-29", "value": 82},
+          {"date": "2024-11-30", "value": 79},
+          {"date": "2024-12-01", "value": 85}
+        ],
+        "related_queries": [
+          "machine learning courses",
+          "ML engineer salary",
+          "tensorflow vs pytorch",
+          "machine learning projects"
+        ],
+        "source": "google_trends",
+        "data_quality": "high"
+      }
+    },
+    "social_media": {
+      "artificial_intelligence": {
+        "sentiment_score": 0.73,
+        "engagement_count": 125430,
+        "mention_count": 15670,
+        "top_posts": [
+          "AI is transforming healthcare diagnostics with unprecedented accuracy",
+          "The future of work: How AI is reshaping job markets globally",
+          "Breakthrough in AI ethics: New guidelines for responsible development"
+        ],
+        "source": "social_media",
+        "data_quality": "medium",
+        "platform_distribution": {
+          "twitter": 0.45,
+          "linkedin": 0.35,
+          "reddit": 0.15,
+          "other": 0.05
+        }
+      },
+      "machine_learning": {
+        "sentiment_score": 0.68,
+        "engagement_count": 98750,
+        "mention_count": 12340,
+        "top_posts": [
+          "Practical guide to implementing ML in production systems",
+          "The rise of AutoML: Democratizing machine learning",
+          "ML model deployment challenges and solutions"
+        ],
+        "source": "social_media",
+        "data_quality": "medium",
+        "platform_distribution": {
+          "twitter": 0.40,
+          "linkedin": 0.30,
+          "reddit": 0.20,
+          "other": 0.10
+        }
+      }
+    },
+    "industry_reports": {
+      "market_size": 285000000000,
+      "growth_rate": 0.28,
+      "key_insights": [
+        "AI market expected to reach $285B by 2025",
+        "Machine learning adoption accelerating across industries",
+        "Talent shortage remains primary barrier to growth",
+        "Open source frameworks driving innovation"
+      ],
+      "source": "industry_reports",
+      "data_quality": "high",
+      "report_sources": [
+        "McKinsey Global AI Survey 2024",
+        "Gartner AI Trends Report",
+        "IDC Worldwide AI Spending Guide"
+      ]
+    }
+  },
+  "keywords": ["artificial intelligence", "machine learning"],
+  "timeframe": "7d",
+  "geography": "global",
+  "sanitization_metadata": {
+    "redactions_applied": 0,
+    "sanitization_timestamp": "2024-12-01T10:30:00Z",
+    "sanitization_level": "high",
+    "pii_detection_performed": true,
+    "data_classification": "public_market_data",
+    "retention_days": 90,
+    "data_quality_score": 0.89
+  }
+}

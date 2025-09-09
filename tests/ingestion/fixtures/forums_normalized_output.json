@@ -1,0 +1,154 @@
+{
+  "fixture_id": "forums_normalized_output_001",
+  "input_fixture_id": "forums_fixture_001",
+  "normalization_timestamp": "2024-12-01T11:05:00Z",
+  "normalized_data": {
+    "posts": [
+      {
+        "id": "reddit_001",
+        "platform": "reddit",
+        "topic": "artificial intelligence",
+        "title": "AI is revolutionizing healthcare diagnostics",
+        "content": "I've been researching how artificial intelligence is transforming medical diagnostics. The accuracy improvements are remarkable, with some studies showing AI can detect conditions 30% earlier than traditional methods. What are your thoughts on the practical implementation challenges?",
+        "author": "anonymous_user_12345",
+        "timestamp": "2024-12-01T08:30:00Z",
+        "upvotes": 234,
+        "comments": 67,
+        "sentiment": "positive",
+        "content_length": 156,
+        "engagement_score": 301
+      },
+      {
+        "id": "reddit_002",
+        "platform": "reddit",
+        "topic": "machine learning",
+        "title": "Practical ML deployment in production",
+        "content": "After months of working on ML models in development, I'm now facing the challenges of deploying them to production. The main issues seem to be around model versioning, monitoring, and performance optimization. Has anyone else dealt with these challenges?",
+        "author": "anonymous_user_67890",
+        "timestamp": "2024-12-01T09:15:00Z",
+        "upvotes": 156,
+        "comments": 43,
+        "sentiment": "neutral",
+        "content_length": 134,
+        "engagement_score": 199
+      }
+    ],
+    "reviews": [
+      {
+        "id": "review_001",
+        "platform": "product_reviews",
+        "topic": "artificial intelligence",
+        "product_name": "AI Diagnostic Assistant Pro",
+        "rating": 4,
+        "title": "Excellent accuracy but steep learning curve",
+        "content": "I've been using this AI diagnostic tool for 3 months now. The accuracy is impressive - it caught a potential issue that I would have missed. However, the interface takes some time to learn effectively. Overall, it's worth the investment for serious practitioners.",
+        "author": "anonymous_user_11111",
+        "timestamp": "2024-12-01T07:45:00Z",
+        "verified_purchase": true,
+        "helpful_votes": 23,
+        "sentiment": "positive",
+        "content_length": 145,
+        "rating_normalized": 0.8
+      },
+      {
+        "id": "review_002",
+        "platform": "product_reviews",
+        "topic": "machine learning",
+        "product_name": "ML Studio Cloud Platform",
+        "rating": 5,
+        "title": "Game-changer for ML workflows",
+        "content": "This platform has completely transformed how we approach machine learning projects. The collaborative features, extensive model library, and deployment tools make it invaluable. The customer support is also excellent when we need help.",
+        "author": "anonymous_user_22222",
+        "timestamp": "2024-12-01T06:20:00Z",
+        "verified_purchase": true,
+        "helpful_votes": 31,
+        "sentiment": "positive",
+        "content_length": 132,
+        "rating_normalized": 1.0
+      }
+    ],
+    "discussions": [
+      {
+        "id": "forum_001",
+        "platform": "forum",
+        "topic": "artificial intelligence",
+        "thread_title": "AI Ethics and Bias Discussion",
+        "content": "I'm organizing a discussion group about ethical considerations in AI development. Key topics include algorithmic bias, transparency requirements, and the responsibility of AI developers. What frameworks or guidelines have you found most useful in your work?",
+        "author": "anonymous_user_33333",
+        "timestamp": "2024-12-01T10:00:00Z",
+        "replies": 15,
+        "views": 342,
+        "tags": ["ethics", "bias", "transparency", "guidelines"],
+        "sentiment": "neutral",
+        "content_length": 167,
+        "engagement_score": 357
+      }
+    ],
+    "topic_summary": {
+      "artificial_intelligence": {
+        "post_count": 1,
+        "review_count": 1,
+        "total_engagement": 658,
+        "average_rating": 4.0,
+        "sentiment_distribution": {
+          "positive": 1,
+          "neutral": 1,
+          "negative": 0
+        }
+      },
+      "machine_learning": {
+        "post_count": 1,
+        "review_count": 1,
+        "total_engagement": 230,
+        "average_rating": 5.0,
+        "sentiment_distribution": {
+          "positive": 1,
+          "neutral": 1,
+          "negative": 0
+        }
+      }
+    },
+    "sentiment_summary": {
+      "positive_percentage": 60.0,
+      "negative_percentage": 0.0,
+      "neutral_percentage": 40.0,
+      "total_analyzed": 5
+    },
+    "engagement_metrics": {
+      "total_posts": 2,
+      "total_reviews": 2,
+      "total_discussions": 1,
+      "average_upvotes": 195.0,
+      "average_comments": 55.0,
+      "average_rating": 4.5
+    },
+    "normalization_metadata": {
+      "topics_covered": ["artificial intelligence", "machine learning"],
+      "total_posts": 5,
+      "normalization_applied": ["sentiment_analysis", "engagement_scoring", "topic_categorization", "author_anonymization"],
+      "data_quality_score": 0.87
+    }
+  },
+  "metadata": {
+    "collection_timestamp": "2024-12-01T11:00:00Z",
+    "adapter_version": "1.0.0",
+    "python_version": "3.12.10",
+    "data_zone": "AMBER",
+    "retention_days": 90,
+    "topics_searched": ["artificial intelligence", "machine learning"],
+    "content_types": ["reviews", "discussions"],
+    "posts_collected": 5,
+    "sanitization_applied": true,
+    "pii_redaction_count": 3,
+    "sentiment_analysis_performed": true,
+    "data_quality_score": 0.87
+  },
+  "provenance": {
+    "adapter_name": "forums_reviews",
+    "session_id": "forums_fixture_session_001",
+    "sources_used": ["reddit", "product_reviews", "forum_posts"],
+    "data_freshness": "near_real_time",
+    "confidence_level": "medium",
+    "sanitization_level": "high"
+  }
+}

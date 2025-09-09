@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sanitized Trends Input Fixture",
+  "description": "Test fixture with sanitized trend data from public sources",
+  "type": "object",
+  "properties": {
+    "fixture_id": {
+      "type": "string",
+      "description": "Unique fixture identifier"
+    },
+    "collection_timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the fixture was created"
+    },
+    "source_data": {
+      "type": "object",
+      "description": "Sanitized source data from various trend providers"
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Keywords searched for trends"
+    },
+    "timeframe": {
+      "type": "string",
+      "enum": ["1d", "7d", "30d", "90d", "1y"],
+      "description": "Time period for trend analysis"
+    },
+    "geography": {
+      "type": "string",
+      "description": "Geographic region for trends"
+    },
+    "sanitization_metadata": {
+      "type": "object",
+      "description": "Information about data sanitization"
+    }
+  },
+  "required": ["fixture_id", "collection_timestamp", "source_data", "keywords", "timeframe", "sanitization_metadata"],
+  "additionalProperties": false
+}

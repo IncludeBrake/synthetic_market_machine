@@ -1,0 +1,72 @@
+{
+  "fixture_id": "competitor_normalized_output_001",
+  "input_fixture_id": "competitor_fixture_001",
+  "normalization_timestamp": "2024-12-01T12:05:00Z",
+  "normalized_data": {
+    "companies": [
+      {
+        "company_name": "TechCorp",
+        "description": "Leading provider of enterprise AI solutions and cloud computing services.",
+        "industry": "Technology",
+        "location": "San Francisco, CA",
+        "company_size": "Large",
+        "funding_stage": "Public",
+        "last_updated": "2024-12-01T12:00:00Z",
+        "data_source": "company_websites",
+        "confidence_score": 0.95
+      },
+      {
+        "company_name": "DataFlow Inc",
+        "description": "Specialized in big data processing and real-time analytics platforms.",
+        "industry": "Technology",
+        "location": "Austin, TX",
+        "company_size": "Mid-size",
+        "funding_stage": "Series C",
+        "last_updated": "2024-12-01T12:00:00Z",
+        "data_source": "company_websites",
+        "confidence_score": 0.90
+      }
+    ],
+    "market_overview": {
+      "industry": "technology",
+      "total_companies": 2,
+      "primary_industry": "Technology",
+      "average_company_size": "Large",
+      "data_freshness": "current",
+      "geographic_distribution": "North America focus"
+    },
+    "competitive_landscape": {
+      "total_competitors_analyzed": 2,
+      "data_sources_used": ["company_websites", "press_releases", "industry_directories", "news_articles"],
+      "analysis_timestamp": "2024-12-01T12:05:00Z",
+      "confidence_level": "high"
+    },
+    "normalization_metadata": {
+      "data_types_normalized": ["company_info", "product_offerings", "leadership"],
+      "normalization_applied": ["company_profile_standardization", "market_data_aggregation"],
+      "companies_processed": 2,
+      "data_quality_score": 0.92
+    }
+  },
+  "metadata": {
+    "collection_timestamp": "2024-12-01T12:00:00Z",
+    "adapter_version": "1.0.0",
+    "python_version": "3.12.10",
+    "data_zone": "AMBER",
+    "retention_days": 90,
+    "competitors_analyzed": 2,
+    "data_types_collected": ["company_info", "product_offerings", "leadership"],
+    "industry_context": "technology",
+    "sanitization_applied": true,
+    "data_quality_score": 0.92,
+    "urls_filtered": 0
+  },
+  "provenance": {
+    "adapter_name": "competitor_pages",
+    "session_id": "competitor_fixture_session_001",
+    "sources_used": ["company_websites", "press_releases", "industry_directories", "news_articles"],
+    "data_freshness": "current",
+    "confidence_level": "high",
+    "industry_context": "technology"
+  }
+}

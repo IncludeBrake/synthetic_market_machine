@@ -1,0 +1,149 @@
+{
+  "fixture_id": "competitor_fixture_001",
+  "collection_timestamp": "2024-12-01T12:00:00Z",
+  "source_data": {
+    "company_websites": {
+      "TechCorp": {
+        "company_name": "TechCorp",
+        "description": "Leading provider of enterprise AI solutions and cloud computing services.",
+        "url": "https://techcorp.com",
+        "last_updated": "2024-12-01T12:00:00Z",
+        "data_collected": {
+          "company_info": {
+            "description": "TechCorp is a global technology company specializing in artificial intelligence, cloud computing, and digital transformation solutions.",
+            "founded_year": 2010,
+            "headquarters": "San Francisco, CA",
+            "employee_count": 2500,
+            "funding_status": "Public"
+          },
+          "product_offerings": [
+            "AI-powered analytics platform",
+            "Cloud infrastructure services",
+            "Machine learning automation tools",
+            "Digital workplace solutions"
+          ],
+          "leadership": [
+            {
+              "name": "Sarah Johnson",
+              "title": "Chief Executive Officer",
+              "background": "Former VP of Engineering at Google, 15 years in tech leadership"
+            },
+            {
+              "name": "Michael Chen",
+              "title": "Chief Technology Officer",
+              "background": "AI researcher with PhD from Stanford, previously led ML at Meta"
+            }
+          ]
+        }
+      },
+      "DataFlow Inc": {
+        "company_name": "DataFlow Inc",
+        "description": "Specialized in big data processing and real-time analytics platforms.",
+        "url": "https://dataflow.com",
+        "last_updated": "2024-12-01T12:00:00Z",
+        "data_collected": {
+          "company_info": {
+            "description": "DataFlow Inc provides cutting-edge data processing solutions for enterprises handling massive datasets.",
+            "founded_year": 2015,
+            "headquarters": "Austin, TX",
+            "employee_count": 800,
+            "funding_status": "Series C"
+          },
+          "product_offerings": [
+            "Real-time data streaming platform",
+            "Big data analytics engine",
+            "Data warehouse solutions",
+            "ML model serving infrastructure"
+          ],
+          "leadership": [
+            {
+              "name": "Dr. Emily Rodriguez",
+              "title": "Chief Executive Officer",
+              "background": "Data science expert with background in distributed systems research"
+            }
+          ]
+        }
+      }
+    },
+    "press_releases": {
+      "TechCorp": [
+        {
+          "title": "TechCorp Launches Next-Generation AI Platform",
+          "date": "2024-11-15T00:00:00Z",
+          "summary": "TechCorp announces the launch of its most advanced AI platform yet, featuring breakthrough capabilities in natural language processing and computer vision.",
+          "url": "https://techcorp.com/press/2024-ai-platform-launch"
+        },
+        {
+          "title": "TechCorp Expands Global Data Center Network",
+          "date": "2024-10-20T00:00:00Z",
+          "summary": "TechCorp announces expansion of its global data center network, adding 5 new facilities to improve service reliability and reduce latency.",
+          "url": "https://techcorp.com/press/2024-datacenter-expansion"
+        }
+      ],
+      "DataFlow Inc": [
+        {
+          "title": "DataFlow Inc Achieves Record Q3 Performance",
+          "date": "2024-11-01T00:00:00Z",
+          "summary": "DataFlow Inc reports record quarterly performance with 300% year-over-year growth in enterprise customers.",
+          "url": "https://dataflow.com/press/2024-q3-results"
+        }
+      ]
+    },
+    "industry_directories": {
+      "industry": "technology",
+      "companies": [
+        {
+          "name": "TechCorp",
+          "industry_rank": 15,
+          "market_share": 0.08,
+          "revenue_range": "$500M - $1B",
+          "growth_rate": 0.35,
+          "certifications": ["ISO 27001", "SOC 2", "PCI DSS"],
+          "last_directory_update": "2024-11-30T00:00:00Z"
+        },
+        {
+          "name": "DataFlow Inc",
+          "industry_rank": 42,
+          "market_share": 0.03,
+          "revenue_range": "$100M - $250M",
+          "growth_rate": 0.45,
+          "certifications": ["ISO 27001", "SOC 2"],
+          "last_directory_update": "2024-11-30T00:00:00Z"
+        }
+      ]
+    },
+    "news_articles": [
+      {
+        "title": "TechCorp's AI Revolution: Transforming Enterprise Computing",
+        "source": "TechCrunch",
+        "date": "2024-11-28T00:00:00Z",
+        "summary": "Industry analysts weigh in on TechCorp's latest AI platform launch and its potential impact on enterprise computing landscape.",
+        "url": "https://techcrunch.com/2024/techcorp-ai-revolution"
+      },
+      {
+        "title": "DataFlow Inc Raises $50M in Series C Funding",
+        "source": "VentureBeat",
+        "date": "2024-11-10T00:00:00Z",
+        "summary": "DataFlow Inc secures $50 million in Series C funding to accelerate expansion of its data processing platform.",
+        "url": "https://venturebeat.com/2024/dataflow-series-c"
+      }
+    ]
+  },
+  "competitor_urls": [
+    "https://techcorp.com",
+    "https://dataflow.com"
+  ],
+  "data_types": ["company_info", "product_offerings", "leadership"],
+  "industry_context": "technology",
+  "sanitization_metadata": {
+    "redactions_applied": 2,
+    "redaction_details": [
+      "personal_background: sensitive details removed",
+      "contact_info: removed from leadership data"
+    ],
+    "sanitization_timestamp": "2024-12-01T12:00:00Z",
+    "sanitization_level": "medium",
+    "pii_detection_performed": true,
+    "data_classification": "public_company_info"
+  }
+}
