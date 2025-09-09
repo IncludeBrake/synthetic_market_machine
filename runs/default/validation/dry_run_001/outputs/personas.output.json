@@ -1,0 +1,52 @@
+{
+  "personas": [
+    {
+      "id": "persona_0",
+      "demographics": {
+        "age": 35,
+        "income": 75000
+      },
+      "psychographics": {
+        "tech_savvy": true,
+        "risk_tolerance": 0.7
+      },
+      "behavioral": {
+        "purchase_frequency": "monthly",
+        "brand_loyalty": 0.8
+      }
+    },
+    {
+      "id": "persona_1",
+      "demographics": {
+        "age": 42,
+        "income": 95000
+      },
+      "psychographics": {
+        "tech_savvy": true,
+        "risk_tolerance": 0.6
+      },
+      "behavioral": {
+        "purchase_frequency": "quarterly",
+        "brand_loyalty": 0.9
+      }
+    },
+    {
+      "id": "persona_2",
+      "demographics": {
+        "age": 28,
+        "income": 55000
+      },
+      "psychographics": {
+        "tech_savvy": false,
+        "risk_tolerance": 0.8
+      },
+      "behavioral": {
+        "purchase_frequency": "annually",
+        "brand_loyalty": 0.5
+      }
+    }
+  ],
+  "confidence_score": 0.82,
+  "bias_controls_applied": true,
+  "diversity_score": 0.75
+}

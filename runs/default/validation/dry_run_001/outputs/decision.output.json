@@ -1,0 +1,48 @@
+{
+  "decision_metadata": {
+    "decision_id": "decision_20250909_204249",
+    "timestamp": "2025-09-09T20:42:49.834113Z",
+    "run_id": "dry_run_001",
+    "python_version": "3.12.10",
+    "data_zone": "GREEN",
+    "retention_days": 90
+  },
+  "decision_analysis": {
+    "composite_score": 48.75,
+    "dimension_scores": {
+      "market_opportunity": {
+        "score": 45,
+        "confidence": 0.75
+      },
+      "wtp_validation": {
+        "score": 35,
+        "confidence": 0.8
+      },
+      "competitive_position": {
+        "score": 50,
+        "confidence": 0.7
+      },
+      "technical_feasibility": {
+        "score": 75,
+        "confidence": 0.85
+      },
+      "financial_viability": {
+        "score": 40,
+        "confidence": 0.75
+      },
+      "risk_assessment": {
+        "score": 45,
+        "confidence": 0.7
+      },
+      "team_capability": {
+        "score": 65,
+        "confidence": 0.8
+      }
+    }
+  },
+  "decision_recommendation": {
+    "recommendation": "PIVOT",
+    "confidence": 0.75,
+    "rationale": "Market potential exists but requires strategic adjustments"
+  }
+}

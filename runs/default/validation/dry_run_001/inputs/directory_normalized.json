@@ -1,0 +1,26 @@
+{
+  "source": "directories",
+  "records_ingested": 75,
+  "data_quality_score": 0.88,
+  "timestamp": "2025-09-09T20:42:49.829602Z",
+  "companies": [
+    {
+      "name": "Company X",
+      "category": "SaaS",
+      "funding": "$5M",
+      "employees": 25
+    },
+    {
+      "name": "Company Y",
+      "category": "Analytics",
+      "funding": "$12M",
+      "employees": 50
+    },
+    {
+      "name": "Company Z",
+      "category": "AI Tools",
+      "funding": "$8M",
+      "employees": 35
+    }
+  ]
+}

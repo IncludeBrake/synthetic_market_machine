@@ -1,0 +1,32 @@
+{
+  "source": "competitor_pages",
+  "records_ingested": 50,
+  "data_quality_score": 0.92,
+  "timestamp": "2025-09-09T20:42:49.827042Z",
+  "competitors": [
+    {
+      "name": "Competitor A",
+      "features": [
+        "feature1",
+        "feature2"
+      ],
+      "pricing": "$99/month"
+    },
+    {
+      "name": "Competitor B",
+      "features": [
+        "feature1",
+        "feature3"
+      ],
+      "pricing": "$149/month"
+    },
+    {
+      "name": "Competitor C",
+      "features": [
+        "feature2",
+        "feature3"
+      ],
+      "pricing": "$79/month"
+    }
+  ]
+}

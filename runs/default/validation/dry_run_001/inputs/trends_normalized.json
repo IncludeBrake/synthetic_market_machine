@@ -1,0 +1,23 @@
+{
+  "source": "trends",
+  "records_ingested": 150,
+  "data_quality_score": 0.85,
+  "timestamp": "2025-09-09T20:42:49.824030Z",
+  "trends": [
+    {
+      "keyword": "AI analytics",
+      "volume": 12500,
+      "growth": 0.15
+    },
+    {
+      "keyword": "customer insights",
+      "volume": 8900,
+      "growth": 0.22
+    },
+    {
+      "keyword": "market validation",
+      "volume": 5600,
+      "growth": 0.18
+    }
+  ]
+}

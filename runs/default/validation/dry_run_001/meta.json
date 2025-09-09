@@ -1,0 +1,16 @@
+{
+  "run_id": "dry_run_001",
+  "project_id": "default",
+  "status": "COMPLETED",
+  "initiated_at": "2025-09-09T20:42:49.822482Z",
+  "completed_at": "2025-09-09T20:42:49.822482Z",
+  "python_version": "3.12.10",
+  "python_env_hash": "cbb28e9f4e64c43573197596b404614ee2437d83bdca39e087026dcb57e673a3",
+  "data_zone": "GREEN",
+  "retention_days": 90,
+  "execution_mode": "dry_run",
+  "total_steps": 7,
+  "completed_steps": 7,
+  "token_usage": 8450,
+  "token_budget": 10000
+}

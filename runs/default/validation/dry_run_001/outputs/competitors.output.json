@@ -1,0 +1,45 @@
+{
+  "competitors": [
+    {
+      "id": "competitor_0",
+      "company_info": {
+        "name": "Competitor A",
+        "size": "medium"
+      },
+      "market_position": {
+        "share": 0.18,
+        "growth_rate": 0.08
+      },
+      "competitive_analysis": {
+        "strengths": [
+          "feature_a"
+        ],
+        "weaknesses": [
+          "feature_b"
+        ]
+      }
+    },
+    {
+      "id": "competitor_1",
+      "company_info": {
+        "name": "Competitor B",
+        "size": "large"
+      },
+      "market_position": {
+        "share": 0.25,
+        "growth_rate": 0.12
+      },
+      "competitive_analysis": {
+        "strengths": [
+          "feature_a",
+          "feature_c"
+        ],
+        "weaknesses": [
+          "feature_d"
+        ]
+      }
+    }
+  ],
+  "market_coverage": 0.85,
+  "analysis_depth": "comprehensive"
+}
