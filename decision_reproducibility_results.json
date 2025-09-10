@@ -1,0 +1,40 @@
+{
+  "timestamp": "2025-09-10T02:59:48.233777Z",
+  "validation_runs": [
+    {
+      "scenario": "identical_inputs",
+      "status": "PASSED",
+      "score": 1.0,
+      "details": "Identical inputs produced identical decisions"
+    },
+    {
+      "scenario": "different_seeds",
+      "status": "FAILED",
+      "score": 0.0,
+      "reason": "Different seeds did not produce different valid decisions"
+    },
+    {
+      "scenario": "replay_functionality",
+      "status": "PASSED",
+      "score": 1.0,
+      "details": "Replay produced identical decision to original run"
+    },
+    {
+      "scenario": "confidence_stability",
+      "status": "PASSED",
+      "score": 1.0,
+      "details": ".3f"
+    },
+    {
+      "scenario": "evidence_consistency",
+      "status": "PASSED",
+      "score": 1.0,
+      "details": ".3f"
+    }
+  ],
+  "overall_reproducibility_score": 0.8,
+  "recommendations": [
+    "\u26a0\ufe0f Acceptable reproducibility - consider optimization"
+  ],
+  "status": "ACCEPTABLE"
+}
